@@ -1,5 +1,7 @@
-import FooterColumn from "./FooterColumn";
-import FooterLink from "./FooterLink";
+import { FooterColumn } from "./FooterColumn";
+import { FooterLink } from "./FooterLink";
+import { FooterContact } from "./FooterContact";
+import { FooterEmergency } from "./FooterEmergency";
 
 const Footer = () => {
   return (
@@ -31,24 +33,8 @@ const Footer = () => {
             </ul>
           </FooterColumn>
 
-          <FooterColumn title="Contact">
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                123 Therapy St, Suite 100
-                <br />
-                Los Angeles, CA 90001
-              </li>
-              <li>(555) 123-4567</li>
-              <li>contact@drsarah.com</li>
-            </ul>
-          </FooterColumn>
-
-          <FooterColumn title="Emergency Resources">
-            <ul className="space-y-2 text-gray-400">
-              <li>National Crisis Line: 988</li>
-              <li>Emergency: 911</li>
-            </ul>
-          </FooterColumn>
+          <FooterContact />
+          <FooterEmergency />
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">

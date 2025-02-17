@@ -1,7 +1,14 @@
 import PropTypes from "prop-types";
 
-const MobileNav = ({ isOpen, links, currentPath }) => {
+const MobileNav = ({ isOpen, currentPath }) => {
   if (!isOpen) return null;
+
+  const links = [
+    { href: "#/", label: "Home" },
+    { href: "#/about", label: "About" },
+    { href: "#/services", label: "Services" },
+    { href: "#/contact", label: "Contact" },
+  ];
 
   return (
     <div className="md:hidden bg-white shadow-lg">
@@ -11,12 +18,12 @@ const MobileNav = ({ isOpen, links, currentPath }) => {
             key={href}
             href={href}
             className={`block px-3 py-2 text-gray-600 hover:text-teal-600 
-                ${currentPath === href ? "text-teal-600 font-semibold" : ""}`}
+                ${currentPath === href.replace("#", "") ? "text-teal-600 font-semibold" : ""}`}
           >
             {label}
           </a>
         ))}
-        <button className="w-full mt-2 bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700">
+        <button className="w-full mt-2 bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 transition-colors">
           Book Session
         </button>
       </div>
@@ -26,12 +33,6 @@ const MobileNav = ({ isOpen, links, currentPath }) => {
 
 MobileNav.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      href: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
   currentPath: PropTypes.string.isRequired,
 };
 
