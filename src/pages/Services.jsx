@@ -1,5 +1,7 @@
-import { ServiceCard } from "../components/services/ServiceCard";
-import { Section, PageHeader, Card } from "../components/common";
+import ServiceCard from "../components/services/ServiceCard";
+import Section from "../components/common/Section";
+import PageHeader from "../components/common/PageHeader";
+import Card from "../components/common/Card";
 
 const ServicesPage = () => {
   const services = [

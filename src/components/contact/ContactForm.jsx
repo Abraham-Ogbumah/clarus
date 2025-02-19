@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { Input, TextArea, Button } from "../common";
+import Input from "../common/Input";
+import TextArea from "../common/TextArea";
+import Button from "../common/Button";
 
 const ContactForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({

@@ -1,5 +1,6 @@
-import { QualificationCard } from "../components/about/QualificationCard";
-import { Section, PageHeader } from "../components/common";
+import QualificationCard from "../components/about/QualificationCard";
+import Section from "../components/common/Section";
+import PageHeader from "../components/common/PageHeader";
 
 const AboutPage = () => {
   const qualifications = [

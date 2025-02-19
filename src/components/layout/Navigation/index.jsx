@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { MobileNav } from "./MobileNav";
-import { DesktopNav } from "./DesktopNav";
+import MobileNav from "./MobileNav";
+import DesktopNav from "./DesktopNav";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);

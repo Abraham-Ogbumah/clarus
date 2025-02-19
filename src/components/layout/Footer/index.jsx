@@ -1,7 +1,7 @@
-import { FooterColumn } from "./FooterColumn";
-import { FooterLink } from "./FooterLink";
-import { FooterContact } from "./FooterContact";
-import { FooterEmergency } from "./FooterEmergency";
+import FooterColumn from "./FooterColumn";
+import FooterLink from "./FooterLink";
+import FooterContact from "./FooterContact";
+import FooterEmergency from "./FooterEmergency";
 
 const Footer = () => {
   return (

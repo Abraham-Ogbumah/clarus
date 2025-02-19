@@ -1,4 +1,4 @@
-import { FooterColumn } from "./FooterColumn";
+import FooterColumn from "./FooterColumn";
 
 const FooterContact = () => {
   return (

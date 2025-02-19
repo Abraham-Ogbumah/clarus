@@ -1,6 +1,8 @@
-import { ContactForm } from "../components/contact/ContactForm";
-import { ContactInfo } from "../components/contact/ContactInfo";
-import { Section, PageHeader, Card } from "../components/common";
+import ContactForm from "../components/contact/ContactForm";
+import ContactInfo from "../components/contact/ContactInfo";
+import Section from "../components/common/Section";
+import PageHeader from "../components/common/PageHeader";
+import Card from "../components/common/Card";
 
 const ContactPage = () => {
   const handleSubmit = (formData) => {

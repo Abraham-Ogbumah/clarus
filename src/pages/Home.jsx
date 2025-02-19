@@ -1,7 +1,8 @@
-import { Hero } from "../components/home/Hero";
-import { ServiceCard } from "../components/services/ServiceCard";
-import { TestimonialCard } from "../components/testimonials/TestimonialCard";
-import { Section, PageHeader } from "../components/common";
+import Hero from "../components/home/Hero";
+import ServiceCard from "../components/services/ServiceCard";
+import TestimonialCard from "../components/testimonials/TestimonialCard";
+import Section from "../components/common/Section";
+import PageHeader from "../components/common/PageHeader";
 
 const HomePage = () => {
   const services = [
