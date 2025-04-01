@@ -51,7 +51,7 @@ const HomePage = () => {
 
       <Section className="bg-white">
         <PageHeader
-          title="Our Services"
+          title="Couselling Services"
           subtitle="Discover how we can support your journey to wellness"
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
