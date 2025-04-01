@@ -10,22 +10,37 @@ export default {
       colors: {
         clarus: {
           // Base brand colors from document
-          dark: "#272D1E", // Darkest green/almost black
-          "dark-green": "#414B30", // Dark olive green
-          "medium-green": "#656C51", // Medium olive green
-          "light-green": "#ADB296", // Light olive green
-          lightest: "#D4D7C8", // Very light olive/gray
+          dark: "#272D1E",
+          "dark-green": "#414B30",
+          "medium-green": "#656C51",
+          "light-green": "#ADB296",
+          lightest: "#D4D7C8",
           accent: {
-            purple: "#6E5775", // Purple accent seen on banner
-            green: "#7AB547", // Bright green accent
+            purple: "#6E5775",
+            green: "#7AB547",
           },
         },
         text: {
-          primary: "#272D1E", // Primary text color (dark green)
-          secondary: "#414B30", // Secondary text color
-          light: "#D4D7C8", // Light text for dark backgrounds
-          muted: "#656C51", // Muted text color
+          primary: "#272D1E",
+          secondary: "#414B30",
+          light: "#D4D7C8",
+          muted: "#656C51",
         },
+      },
+      backgroundImage: {
+        "hero-pattern": "url('/images/bg-texture.png')",
+        "gradient-accent": "linear-gradient(135deg, #6E5775 0%, #7AB547 100%)",
+      },
+      boxShadow: {
+        card: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+        "card-hover":
+          "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      },
+      borderColor: {
+        DEFAULT: "#D4D7C8",
+      },
+      borderRadius: {
+        DEFAULT: "0.375rem",
       },
     },
   },
