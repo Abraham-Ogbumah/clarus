@@ -36,7 +36,7 @@ const Navigation = () => {
         <div className="flex justify-between h-16">
           <a href="#/" className="flex items-center">
             <span className="text-2xl font-serif text-teal-600">
-              Dr. Sarah Mitchell
+              Clarus Pyschotherapy
             </span>
           </a>
 
@@ -46,7 +46,7 @@ const Navigation = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 hover:text-gray-900 focus:outline-none"
+              className="hover:text-gray-900 focus:outline-none"
             >
               <span className="text-2xl">{isOpen ? "✕" : "☰"}</span>
             </button>
