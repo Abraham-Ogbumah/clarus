@@ -17,16 +17,16 @@ const Footer = () => {
           <FooterColumn title="Quick Links">
             <ul className="space-y-2">
               <li>
-                <FooterLink href="#/">Home</FooterLink>
+                <FooterLink href="/">Home</FooterLink>
               </li>
               <li>
-                <FooterLink href="#/about">About</FooterLink>
+                <FooterLink href="/about">About</FooterLink>
               </li>
               <li>
-                <FooterLink href="#/services">Services</FooterLink>
+                <FooterLink href="/services">Services</FooterLink>
               </li>
               <li>
-                <FooterLink href="#/contact">Contact</FooterLink>
+                <FooterLink href="/contact">Contact</FooterLink>
               </li>
             </ul>
           </FooterColumn>
