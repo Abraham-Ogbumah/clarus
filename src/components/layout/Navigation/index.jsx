@@ -12,17 +12,28 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 20);
     };
 
-    const handleHashChange = () => {
-      setCurrentPath(window.location.hash.slice(1) || "/");
+    // Update current path logic to use pathname instead of hash
+    const updateCurrentPath = () => {
+      setCurrentPath(window.location.pathname);
       setIsOpen(false);
     };
 
+    // Set initial path
+    updateCurrentPath();
+
+    // Create a MutationObserver to watch for changes to the URL
+    const observer = new MutationObserver(() => {
+      updateCurrentPath();
+    });
+
+    // Start observing
+    observer.observe(document, { subtree: true, childList: true });
+
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("hashchange", handleHashChange);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("hashchange", handleHashChange);
+      observer.disconnect();
     };
   }, []);
 
@@ -34,7 +45,7 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <a href="#/" className="flex items-center">
+          <a href="/" className="flex items-center">
             <img
               src="/v5_cl.png"
               alt="Clarus Psychotherapy Logo"
@@ -48,7 +59,7 @@ const Navigation = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="hover:text-gray-900 focus:outline-none"
+              className="hover:text-white-900 focus:outline-none"
             >
               <span className="text-2xl">{isOpen ? "✕" : "☰"}</span>
             </button>

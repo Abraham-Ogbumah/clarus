@@ -4,10 +4,10 @@ const MobileNav = ({ isOpen, currentPath }) => {
   if (!isOpen) return null;
 
   const links = [
-    { href: "#/", label: "Home" },
-    { href: "#/about", label: "About" },
-    { href: "#/services", label: "Services" },
-    { href: "#/contact", label: "Contact" },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -18,7 +18,7 @@ const MobileNav = ({ isOpen, currentPath }) => {
             key={href}
             href={href}
             className={`block px-3 py-2 text-gray-600 hover:text-teal-600 
-                ${currentPath === href.replace("#", "") ? "text-teal-600 font-semibold" : ""}`}
+                ${currentPath === href ? "text-teal-600 font-semibold" : ""}`}
           >
             {label}
           </a>

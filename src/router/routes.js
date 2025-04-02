@@ -1,3 +1,4 @@
+// src/router/routes.js
 import HomePage from "../pages/Home";
 import AboutPage from "../pages/About";
 import ServicesPage from "../pages/Services";

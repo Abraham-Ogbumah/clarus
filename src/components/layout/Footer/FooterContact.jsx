@@ -5,9 +5,9 @@ const FooterContact = () => {
     <FooterColumn title="Contact">
       <ul className="space-y-2 text-white-400">
         <li>
-          123 Therapy St, Suite 100
+          404 McArthur Ave
           <br />
-          Los Angeles, CA 90001
+          Ottawa, ON K1K 1G8
         </li>
         <li>(438) 308-4595</li>
         <li>dorothy@claruspsychotherapy.com</li>

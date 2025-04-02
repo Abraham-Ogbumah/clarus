@@ -1,6 +1,3 @@
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
 import Router from "./router/Router";
 import Layout from "./components/layout/Layout";
 import { findRouteByPath } from "./router/routes";
@@ -9,13 +6,13 @@ import "./App.css";
 const App = () => {
   return (
     <Router>
-      {(currentPath) => {
+      {(currentPath, navigate) => {
         const route = findRouteByPath(currentPath);
         const PageComponent = route?.component || NotFound;
 
         return (
-          <Layout>
-            <PageComponent />
+          <Layout currentPath={currentPath} navigate={navigate}>
+            <PageComponent navigate={navigate} />
           </Layout>
         );
       }}
@@ -31,7 +28,14 @@ const NotFound = () => (
       <p className="text-gray-600 mb-8">
         The page you are looking for does not exist.
       </p>
-      <a href="#/" className="text-teal-600 hover:text-teal-700">
+      <a
+        href="/"
+        onClick={(e) => {
+          e.preventDefault();
+          window.navigateTo("/");
+        }}
+        className="text-teal-600 hover:text-teal-700"
+      >
         Return to Home
       </a>
     </div>

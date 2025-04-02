@@ -3,20 +3,16 @@ import NavLink from "./Navlink";
 
 const DesktopNav = ({ currentPath }) => {
   const links = [
-    { href: "#/", label: "Home" },
-    { href: "#/about", label: "About" },
-    { href: "#/services", label: "Services" },
-    { href: "#/contact", label: "Contact" },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
     <div className="hidden md:flex items-center space-x-8">
       {links.map(({ href, label }) => (
-        <NavLink
-          key={href}
-          href={href}
-          isCurrent={currentPath === href.replace("#", "")}
-        >
+        <NavLink key={href} href={href} isCurrent={currentPath === href}>
           {label}
         </NavLink>
       ))}
