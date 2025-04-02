@@ -12,21 +12,17 @@ const Navigation = () => {
       setIsScrolled(window.scrollY > 20);
     };
 
-    // Update current path logic to use pathname instead of hash
     const updateCurrentPath = () => {
       setCurrentPath(window.location.pathname);
       setIsOpen(false);
     };
 
-    // Set initial path
     updateCurrentPath();
 
-    // Create a MutationObserver to watch for changes to the URL
     const observer = new MutationObserver(() => {
       updateCurrentPath();
     });
 
-    // Start observing
     observer.observe(document, { subtree: true, childList: true });
 
     window.addEventListener("scroll", handleScroll);

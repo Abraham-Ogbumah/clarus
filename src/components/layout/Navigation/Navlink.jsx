@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 const NavLink = ({ href, children, isCurrent }) => {
   const handleClick = (e) => {
     e.preventDefault();
-    // Use the window.navigateTo function we defined in Router
     window.navigateTo(href);
   };
 

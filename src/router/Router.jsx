@@ -1,4 +1,3 @@
-// src/router/Router.jsx
 import { useState, useEffect } from "react";
 
 const Router = ({ children }) => {
@@ -7,9 +6,9 @@ const Router = ({ children }) => {
   useEffect(() => {
     const handlePopState = () => {
       setCurrentPath(window.location.pathname);
+      window.scrollTo(0, 0);
     };
 
-    // Set up popstate event listener
     window.addEventListener("popstate", handlePopState);
 
     return () => {
@@ -17,13 +16,12 @@ const Router = ({ children }) => {
     };
   }, []);
 
-  // Create a navigate function that your links can use
   const navigate = (path) => {
     window.history.pushState({}, "", path);
     setCurrentPath(path);
+    window.scrollTo(0, 0);
   };
 
-  // Expose the navigate function to the global window object so links can use it
   window.navigateTo = navigate;
 
   return children(currentPath, navigate);

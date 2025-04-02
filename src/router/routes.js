@@ -1,4 +1,3 @@
-// src/router/routes.js
 import HomePage from "../pages/Home";
 import AboutPage from "../pages/About";
 import ServicesPage from "../pages/Services";
@@ -27,7 +26,6 @@ export const routes = [
   },
 ];
 
-// Helper function to find the current route
 export const findRouteByPath = (path) => {
   return routes.find((route) => route.path === path);
 };
