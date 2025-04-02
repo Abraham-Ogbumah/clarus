@@ -1,17 +1,22 @@
 import PropTypes from "prop-types";
 
-const FooterColumn = ({ title, children }) => {
+const FooterColumn = ({ logoSrc, logoAlt, children }) => {
   return (
     <div>
-      <h3 className="text-lg font-semibold mb-4">{title}</h3>
+      <img src={logoSrc} alt={logoAlt} className="h-8 mb-4 object-contain" />
       {children}
     </div>
   );
 };
 
 FooterColumn.propTypes = {
-  title: PropTypes.string.isRequired,
+  logoSrc: PropTypes.string.isRequired,
+  logoAlt: PropTypes.string,
   children: PropTypes.node.isRequired,
+};
+
+FooterColumn.defaultProps = {
+  logoAlt: "Company Logo",
 };
 
 export default FooterColumn;
