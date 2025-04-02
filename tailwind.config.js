@@ -14,6 +14,8 @@ export default {
           "dark-green": "#414B30",
           "medium-green": "#656C51",
           "light-green": "#ADB296",
+          "dark-olive": "#262B15",
+          "light-grey": "#AFB4AD",
           lightest: "#D4D7C8",
           accent: {
             purple: "#6E5775",

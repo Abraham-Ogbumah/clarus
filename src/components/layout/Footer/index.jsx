@@ -5,14 +5,12 @@ import FooterEmergency from "./FooterEmergency";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-clarus-dark-olive text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <FooterColumn logoSrc="/white_cl.png">
-            <p className="text-gray-400">
-              Licensed Clinical Psychologist
-              <br />
-              License #12345
+            <p className="text-white-400">
+              Clarus Counselling and Psychotherapy
             </p>
           </FooterColumn>
 
@@ -38,7 +36,10 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 Dr. Sarah Mitchell. All rights reserved.</p>
+          <p>
+            &copy;2025 Clarus Counselling and Psychotherapyy. All rights
+            reserved.
+          </p>
         </div>
       </div>
     </footer>

@@ -2,7 +2,10 @@ import PropTypes from "prop-types";
 
 const FooterLink = ({ href, children }) => {
   return (
-    <a href={href} className="text-gray-400 hover:text-white transition-colors">
+    <a
+      href={href}
+      className="text-white-400 hover:text-clarus-light-grey transition-colors"
+    >
       {children}
     </a>
   );
