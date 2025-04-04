@@ -39,7 +39,7 @@ const Navigation = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
+          <div className="flex justify-between h-16 mt-3">
             <a
               href="/"
               onClick={(e) => {
@@ -60,7 +60,7 @@ const Navigation = () => {
             <div className="md:hidden flex items-center">
               <button
                 onClick={toggleMobileMenu}
-                className="text-white-600 hover:text-white-900 focus:outline-none"
+                className="bg-clarus-sage-green text-white-600 hover:text-white-900 focus:outline-none"
                 aria-label={isOpen ? "Close menu" : "Open menu"}
               >
                 <span className="text-2xl">{isOpen ? "✕" : "☰"}</span>

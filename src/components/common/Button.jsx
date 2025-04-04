@@ -7,10 +7,13 @@ const Button = ({
   ...props
 }) => {
   const variants = {
-    primary: "bg-teal-600 text-white hover:bg-teal-700",
+    primary:
+      "bg-clarus-sage-green text-white px-4 py-2 rounded-md hover:bg-clarus-light-green transition-colors border-0",
     secondary:
       "bg-white text-teal-600 border-2 border-teal-600 hover:bg-teal-50",
     text: "text-teal-600 hover:text-teal-700 underline",
+    mobile:
+      "w-full mt-2 bg-clarus-sage-green text-white px-4 py-2 rounded-md hover:bg-clarus-light-green transition-colors border-0",
   };
 
   return (

@@ -20,7 +20,7 @@ const Hero = () => {
               A safe space for healing, growth, and the courage to start again.
             </p>
             <Button variant="primary" size="large">
-              Schedule a Consultation
+              Book Your Session
             </Button>
           </div>
         </div>

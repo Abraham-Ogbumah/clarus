@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import NavLink from "./Navlink";
+import Button from "../../common/Button";
 
 const DesktopNav = ({ currentPath }) => {
   const links = [
@@ -16,9 +17,9 @@ const DesktopNav = ({ currentPath }) => {
           {label}
         </NavLink>
       ))}
-      <button className="bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 transition-colors">
-        Book Session
-      </button>
+      <Button variant="primary" size="large">
+        Book Your Session
+      </Button>
     </div>
   );
 };
