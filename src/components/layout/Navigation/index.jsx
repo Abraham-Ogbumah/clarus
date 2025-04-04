@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import MobileNav from "./MobileNav";
 import DesktopNav from "./DesktopNav";
-import Hero from "../../home/Hero";
+import Button from "../../common/Button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +39,7 @@ const Navigation = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 mt-3">
+          <div className="flex justify-between h-16">
             <a
               href="/"
               onClick={(e) => {
@@ -58,13 +58,13 @@ const Navigation = () => {
             <DesktopNav currentPath={currentPath} />
 
             <div className="md:hidden flex items-center">
-              <button
+              <Button
                 onClick={toggleMobileMenu}
-                className="bg-clarus-sage-green text-white-600 hover:text-white-900 focus:outline-none"
                 aria-label={isOpen ? "Close menu" : "Open menu"}
+                className="bg-clarus-sage-green text-white-600 hover:text-white-900 focus:outline-none"
               >
                 <span className="text-2xl">{isOpen ? "✕" : "☰"}</span>
-              </button>
+              </Button>
             </div>
           </div>
         </div>
@@ -75,7 +75,6 @@ const Navigation = () => {
           setIsOpen={setIsOpen}
         />
       </nav>
-      <Hero />
     </>
   );
 };

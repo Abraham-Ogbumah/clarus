@@ -2,6 +2,7 @@ import ServiceCard from "../components/services/ServiceCard";
 import TestimonialCard from "../components/testimonials/TestimonialCard";
 import Section from "../components/common/Section";
 import PageHeader from "../components/common/PageHeader";
+import Hero from "../components/home/Hero";
 
 const HomePage = () => {
   const services = [
@@ -46,6 +47,7 @@ const HomePage = () => {
 
   return (
     <main>
+      <Hero />
       <Section className="bg-white">
         <PageHeader
           title="Couselling Services"
