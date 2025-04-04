@@ -1,4 +1,3 @@
-import Hero from "../components/home/Hero";
 import ServiceCard from "../components/services/ServiceCard";
 import TestimonialCard from "../components/testimonials/TestimonialCard";
 import Section from "../components/common/Section";
@@ -47,8 +46,6 @@ const HomePage = () => {
 
   return (
     <main>
-      <Hero />
-
       <Section className="bg-white">
         <PageHeader
           title="Couselling Services"
