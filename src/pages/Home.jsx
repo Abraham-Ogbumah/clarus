@@ -3,6 +3,7 @@ import TestimonialCard from "../components/testimonials/TestimonialCard";
 import Section from "../components/common/Section";
 import PageHeader from "../components/common/PageHeader";
 import Hero from "../components/home/Hero";
+import AboutCard from "../components/about/AboutCard";
 
 const HomePage = () => {
   const services = [
@@ -53,15 +54,11 @@ const HomePage = () => {
       <Hero />
 
       <Section className="bg-white">
-        <PageHeader
-          title="About Me"
-          subtitle="Discover how we can support your journey to wellness"
+        <AboutCard
+          title="Your journey starts here"
+          description="At Clarus Psychotherapy, we are here to support you through life’s unexpected challenges — from addiction, anxiety, and depression to relationship issues, prenatal distress, and life transitions. We work with individuals, couples, and families from all backgrounds, including those navigating immigration stress and trauma. With over seven years of experience, we use evidence-based approaches such as Cognitive Behavioral Therapy, Solution-Focused Therapy, Narrative Therapy, and Gottman Method to help you discover your strengths and move forward with confidence. Rooted in a trauma-informed and empathetic approach, we create a safe and non-judgmental space for healing, growth, and lasting change. Let Clarus Psychotherapy walk with you on your journey to wellness."
+          imageSrc="./home_2.jpg"
         />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard key={index} {...service} />
-          ))}
-        </div>
       </Section>
 
       <Section className="bg-clarus-light-grey">
