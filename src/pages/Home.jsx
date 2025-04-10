@@ -13,22 +13,25 @@ const HomePage = () => {
       icon: "👤",
       duration: "50 minutes",
       format: "In-person or Online",
+      text: "Individual psychotherapy can help release old wounds, address fears, struggles and combat problems before they become bigger issues",
     },
     {
-      title: "Couples Counseling",
+      title: "Couples Therapy",
       description:
         "Build stronger relationships through improved communication.",
       icon: "👥",
-      duration: "75 minutes",
+      duration: "90 minutes",
       format: "In-person or Online",
+      text: "Relationship counseling and therapy for couples are about addressing problems and building a foundation for a stronger, more fulfilling partnership. It's about learning, growing, and finding ways to connect more deeply with each other.",
     },
     {
-      title: "Online Sessions",
+      title: "Pregnancy and Postpartum",
       description:
-        "Convenient and secure therapy from the comfort of your home.",
+        "Hold the space for your emotional well-being during pregnancy and beyond",
       icon: "💻",
-      duration: "50 minutes",
-      format: "Video Call",
+      duration: "60 minutes",
+      format: "In-person or Online",
+      text: "As your perinatal therapist, I will collaborate with you through pregnancy, birth, and postpartum wellness plans",
     },
   ];
 
@@ -48,7 +51,20 @@ const HomePage = () => {
   return (
     <main>
       <Hero />
+
       <Section className="bg-white">
+        <PageHeader
+          title="About Me"
+          subtitle="Discover how we can support your journey to wellness"
+        />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <ServiceCard key={index} {...service} />
+          ))}
+        </div>
+      </Section>
+
+      <Section className="bg-clarus-light-grey">
         <PageHeader
           title="Couselling Services"
           subtitle="Discover how we can support your journey to wellness"
