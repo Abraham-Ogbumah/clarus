@@ -1,5 +1,5 @@
 import ServiceCard from "../components/services/ServiceCard";
-import TestimonialCard from "../components/testimonials/TestimonialCard";
+import QuoteCard from "../components/testimonials/TestimonialCard";
 import Section from "../components/common/Section";
 import PageHeader from "../components/common/PageHeader";
 import Hero from "../components/home/Hero";
@@ -36,16 +36,10 @@ const HomePage = () => {
     },
   ];
 
-  const testimonials = [
+  const quotes = [
     {
-      text: "Dr. Mitchell's approach helped me overcome my anxiety and develop better coping mechanisms.",
-      author: "Sarah J.",
-      title: "Client for 8 months",
-    },
-    {
-      text: "The online sessions are incredibly convenient and effective.",
-      author: "Michael R.",
-      title: "Client for 1 year",
+      text: "History , despite its wrenching pain, cannot be unlived, but if faced with courage, need not be lived again.",
+      author: "Maya Angelou",
     },
   ];
 
@@ -74,13 +68,9 @@ const HomePage = () => {
       </Section>
 
       <Section className="bg-gray-50">
-        <PageHeader
-          title="Client Stories"
-          subtitle="Hear from people we've helped"
-        />
         <div className="max-w-3xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <TestimonialCard key={index} {...testimonial} />
+          {quotes.map((quote, index) => (
+            <QuoteCard key={index} {...quote} />
           ))}
         </div>
       </Section>

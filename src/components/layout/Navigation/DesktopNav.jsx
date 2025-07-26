@@ -17,7 +17,12 @@ const DesktopNav = ({ currentPath }) => {
           {label}
         </NavLink>
       ))}
-      <Button variant="primary" size="large">
+      <Button
+        href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
+        target="_blank"
+        variant="primary"
+        size="large"
+      >
         Book Your Session
       </Button>
     </div>

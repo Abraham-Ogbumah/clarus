@@ -25,8 +25,8 @@ const MobileNav = ({ isOpen, currentPath, setIsOpen }) => {
             key={href}
             href={href}
             onClick={(e) => handleClick(e, href)}
-            className={`block px-3 py-2 text-clarus-light-grey hover:text-clarus-sage-green font-semibold
-                ${currentPath === href ? "text-teal-600 font-semibold" : ""}`}
+            className={`block px-3 py-2 text-clarus-light-grey hover:text-clarus-sage-green font-semibold transition-colors
+                ${currentPath === href ? "text-clarus-sage-green font-bold bg-clarus-lightest rounded-md" : ""}`}
           >
             {label}
           </a>

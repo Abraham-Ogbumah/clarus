@@ -11,7 +11,7 @@ const NavLink = ({ href, children, isCurrent }) => {
       href={href}
       onClick={handleClick}
       className={`text-clarus-light-grey hover:text-clarus-sage-green transition-colors font-semibold
-        ${isCurrent ? "text-teal-600 font-semibold" : ""}`}
+        ${isCurrent ? "text-clarus-sage-green font-bold border-b-2 border-clarus-sage-green" : ""}`}
     >
       {children}
     </a>

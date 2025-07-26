@@ -18,12 +18,22 @@ const Navigation = () => {
       setIsOpen(false);
     };
 
+    // Listen for custom navigation events
+    const handleNavigation = () => {
+      setCurrentPath(window.location.pathname);
+      setIsOpen(false);
+    };
+
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("popstate", handlePopState);
+
+    // Add event listener for our custom navigation
+    window.addEventListener("navigation", handleNavigation);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("popstate", handlePopState);
+      window.removeEventListener("navigation", handleNavigation);
     };
   }, []);
 

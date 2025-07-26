@@ -19,7 +19,12 @@ const Hero = () => {
             <p className="text-xl text-clarus-lightest mb-8 max-w-2xl mx-auto md:mx-0">
               A safe space for healing, growth, and the courage to start again.
             </p>
-            <Button variant="primary" size="large">
+            <Button
+              href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
+              target="_blank"
+              variant="primary"
+              size="large"
+            >
               Book Your Session
             </Button>
           </div>

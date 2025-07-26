@@ -20,6 +20,9 @@ const Router = ({ children }) => {
     window.history.pushState({}, "", path);
     setCurrentPath(path);
     window.scrollTo(0, 0);
+
+    // Dispatch custom event to notify other components
+    window.dispatchEvent(new CustomEvent("navigation"));
   };
 
   window.navigateTo = navigate;
