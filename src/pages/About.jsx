@@ -54,13 +54,6 @@ const AboutPage = () => {
       {/* Hero Section */}
       <section className="relative bg-clarus-dark-olive overflow-hidden">
         <div className="py-32 relative max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Background Image positioned to the right */}
-          <div
-            className="absolute inset-0 bg-contain bg-right bg-no-repeat opacity-40"
-            style={{ backgroundImage: "url('/about_hero.jpg')" }}
-          />
-
-          {/* Content Container - Centered */}
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-5xl md:text-6xl font-serif text-white mb-6">
@@ -82,7 +75,7 @@ const AboutPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <img
-              src="/dorothy_profile.jpg"
+              src="/DSC01607_(2).png"
               alt="Dorothy - Clarus Psychotherapy"
               className="w-full h-auto rounded-lg shadow-md"
             />
