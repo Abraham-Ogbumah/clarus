@@ -48,16 +48,21 @@ const ContactPage = () => {
             style={{ backgroundImage: "url('/contact_hero.jpg')" }}
           />
 
+          {/* Content Container - Centered */}
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center md:text-left max-w-2xl">
-              <h1 className="text-5xl font-serif text-white mb-6">
+            <div className="text-center">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6">
                 Get in Touch
               </h1>
-              <p className="text-xl text-clarus-lightest mb-8">
+              <p className="text-lg md:text-xl lg:text-2xl text-clarus-lightest max-w-3xl mx-auto mb-8">
                 Ready to take the first step? We&apos;re here to support you on
                 your journey to wellness.
               </p>
-              <Button variant="primary" size="large">
+              <Button
+                variant="primary"
+                size="large"
+                className="px-8 py-4 text-lg"
+              >
                 Book Your Session
               </Button>
             </div>
@@ -67,76 +72,83 @@ const ContactPage = () => {
 
       {/* Contact Form & Info */}
       <Section className="bg-gray-50">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Form */}
-          <div>
-            <h2 className="text-3xl font-serif text-clarus-olive-green mb-6">
+          <div className="flex flex-col h-full">
+            <h2 className="text-2xl md:text-3xl font-serif text-clarus-olive-green mb-4 md:mb-6">
               Send us a Message
             </h2>
-            <p className="text-clarus-dark-grey mb-8">
+            <p className="text-clarus-dark-grey mb-6 md:mb-8">
               Fill out the form below and we&apos;ll get back to you within 24
               hours. All communications are confidential.
             </p>
-            <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+            <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg border border-gray-200 flex-1">
               <ContactForm onSubmit={handleSubmit} />
             </div>
           </div>
 
           {/* Contact Information */}
-          <div>
-            <h2 className="text-3xl font-serif text-clarus-olive-green mb-6">
+          <div className="flex flex-col h-full">
+            <h2 className="text-2xl md:text-3xl font-serif text-clarus-olive-green mb-4 md:mb-6">
               Contact Information
             </h2>
-            <div className="space-y-6 mb-8">
+            <div className="space-y-4 md:space-y-6 flex-1 flex flex-col">
               {contactInfo.map((info, index) => (
                 <div
                   key={index}
-                  className="bg-white p-6 rounded-lg shadow-md border-l-4 border-clarus-accent-green"
+                  className="bg-white p-4 md:p-6 rounded-lg shadow-md border-l-4 border-clarus-accent-green flex items-center min-h-[80px]"
                 >
                   <ContactInfo {...info} />
                 </div>
               ))}
-            </div>
 
-            {/* Office Hours */}
-            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-clarus-olive-green">
-              <div className="flex items-center mb-4">
-                <Clock className="w-6 h-6 text-clarus-accent-green mr-3" />
-                <h3 className="text-xl font-semibold text-clarus-olive-green">
-                  Office Hours
-                </h3>
-              </div>
-              <div className="space-y-3">
-                {officeHours.map((schedule, index) => (
-                  <div key={index} className="flex justify-between">
-                    <span className="text-clarus-dark-grey font-medium">
-                      {schedule.day}
-                    </span>
-                    <span className="text-clarus-dark-grey">
-                      {schedule.hours}
-                    </span>
-                  </div>
-                ))}
+              {/* Office Hours */}
+              <div className="bg-white p-4 md:p-6 rounded-lg shadow-md border-l-4 border-clarus-olive-green mt-auto">
+                <div className="flex items-center mb-4">
+                  <Clock className="w-6 h-6 text-clarus-accent-green mr-3 flex-shrink-0" />
+                  <h3 className="text-lg md:text-xl font-semibold text-clarus-olive-green">
+                    Office Hours
+                  </h3>
+                </div>
+                <div className="space-y-2 md:space-y-3">
+                  {officeHours.map((schedule, index) => (
+                    <div
+                      key={index}
+                      className="flex justify-between text-sm md:text-base"
+                    >
+                      <span className="text-clarus-dark-grey font-medium">
+                        {schedule.day}
+                      </span>
+                      <span className="text-clarus-dark-grey">
+                        {schedule.hours}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
+          </div>
+        </div>
 
-            {/* Quick Booking */}
-            <div className="mt-6 bg-clarus-olive-green text-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center mb-4">
-                <Calendar className="w-6 h-6 text-clarus-lightest mr-3" />
-                <h3 className="text-xl font-semibold">Ready to Book?</h3>
-              </div>
-              <p className="mb-4 opacity-90">
-                Schedule your initial consultation online or give us a call. We
-                offer both in-person and virtual sessions.
-              </p>
-              <Button
-                variant="primary"
-                className="bg-clarus-accent-green hover:bg-green-600 border-0"
-              >
-                Book Online
-              </Button>
+        {/* Quick Booking - Full width below the two columns */}
+        <div className="mt-8 md:mt-12 bg-clarus-olive-green text-white p-6 md:p-8 rounded-lg shadow-md">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex items-center justify-center mb-4">
+              <Calendar className="w-6 md:w-8 h-6 md:h-8 text-clarus-lightest mr-3" />
+              <h3 className="text-xl md:text-2xl font-semibold">
+                Ready to Book?
+              </h3>
             </div>
+            <p className="mb-4 md:mb-6 opacity-90 text-base md:text-lg">
+              Schedule your initial consultation online or give us a call. We
+              offer both in-person and virtual sessions.
+            </p>
+            <Button
+              variant="primary"
+              className="bg-clarus-accent-green hover:bg-green-600 border-0 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg"
+            >
+              Book Online
+            </Button>
           </div>
         </div>
       </Section>
@@ -146,26 +158,27 @@ const ContactPage = () => {
         <PageHeader
           title="Visit Our Office"
           subtitle="Convenient location in Ottawa with easy access and parking"
+          className="text-clarus-dark-grey"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-2xl font-semibold text-clarus-olive-green mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <div className="h-80 md:h-96 flex flex-col">
+            <h3 className="text-xl md:text-2xl font-semibold text-clarus-olive-green mb-4">
               Getting Here
             </h3>
-            <div className="space-y-4 text-clarus-dark-grey">
-              <p>
+            <div className="space-y-3 md:space-y-4 text-clarus-dark-grey flex-grow">
+              <p className="text-sm md:text-base">
                 <strong className="text-clarus-olive-green">By Car:</strong>{" "}
                 Ample free parking available on-site. We&apos;re easily
                 accessible from Highway 417 and Vanier Parkway.
               </p>
-              <p>
+              <p className="text-sm md:text-base">
                 <strong className="text-clarus-olive-green">
                   By Public Transit:
                 </strong>{" "}
                 Multiple OC Transpo routes serve the area. The nearest stop is
                 just a 3-minute walk from our office.
               </p>
-              <p>
+              <p className="text-sm md:text-base">
                 <strong className="text-clarus-olive-green">
                   Accessibility:
                 </strong>{" "}
@@ -174,11 +187,11 @@ const ContactPage = () => {
               </p>
             </div>
 
-            <div className="mt-6 p-6 bg-gray-50 rounded-lg shadow-sm border-l-4 border-clarus-accent-green">
-              <h4 className="font-semibold text-clarus-olive-green mb-4 text-lg">
+            <div className="mt-4 md:mt-6 p-4 md:p-6 bg-gray-50 rounded-lg shadow-sm border-l-4 border-clarus-accent-green">
+              <h4 className="font-semibold text-clarus-olive-green mb-3 md:mb-4 text-base md:text-lg">
                 Office Features
               </h4>
-              <ul className="space-y-2 text-clarus-dark-grey">
+              <ul className="space-y-1 md:space-y-2 text-clarus-dark-grey text-sm md:text-base">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
                   Private, soundproof therapy rooms
@@ -199,15 +212,17 @@ const ContactPage = () => {
             </div>
           </div>
 
-          <div>
+          <div className="h-80 md:h-96">
             {/* Placeholder for map - you would integrate with Google Maps or similar */}
-            <div className="bg-gradient-to-br from-clarus-light-grey to-gray-200 rounded-lg h-80 flex items-center justify-center shadow-md border">
-              <div className="text-center text-clarus-dark-grey">
-                <MapPin className="w-12 h-12 mx-auto mb-4 text-clarus-accent-green" />
-                <p className="font-semibold text-lg">
+            <div className="bg-gradient-to-br from-clarus-light-grey to-gray-200 rounded-lg h-full flex items-center justify-center shadow-md border">
+              <div className="text-center text-clarus-dark-grey p-4">
+                <MapPin className="w-8 md:w-12 h-8 md:h-12 mx-auto mb-2 md:mb-4 text-clarus-accent-green" />
+                <p className="font-semibold text-base md:text-lg">
                   Interactive map would go here
                 </p>
-                <p className="text-sm mt-2">404 McArthur Ave, Ottawa, ON</p>
+                <p className="text-xs md:text-sm mt-1 md:mt-2">
+                  404 McArthur Ave, Ottawa, ON
+                </p>
               </div>
             </div>
           </div>
@@ -217,43 +232,53 @@ const ContactPage = () => {
       {/* Emergency Resources */}
       <Section className="bg-red-50 border-t-4 border-red-400">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-serif text-red-700 mb-6">
+          <h2 className="text-2xl md:text-3xl font-serif text-red-700 mb-4 md:mb-6">
             Crisis &amp; Emergency Resources
           </h2>
-          <p className="text-red-600 mb-8 text-lg">
+          <p className="text-red-600 mb-6 md:mb-8 text-base md:text-lg">
             If you are experiencing a mental health emergency or having thoughts
             of self-harm, please reach out for immediate help.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-red-400">
-              <h3 className="text-lg font-semibold text-red-700 mb-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg border-l-4 border-red-400">
+              <h3 className="text-base md:text-lg font-semibold text-red-700 mb-2">
                 Crisis Line
               </h3>
-              <p className="text-3xl font-bold text-red-600 mb-2">988</p>
-              <p className="text-red-600">24/7 National Crisis Line</p>
+              <p className="text-2xl md:text-3xl font-bold text-red-600 mb-2">
+                988
+              </p>
+              <p className="text-red-600 text-sm md:text-base">
+                24/7 National Crisis Line
+              </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-red-400">
-              <h3 className="text-lg font-semibold text-red-700 mb-2">
+            <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg border-l-4 border-red-400">
+              <h3 className="text-base md:text-lg font-semibold text-red-700 mb-2">
                 Emergency Services
               </h3>
-              <p className="text-3xl font-bold text-red-600 mb-2">911</p>
-              <p className="text-red-600">For immediate emergency</p>
+              <p className="text-2xl md:text-3xl font-bold text-red-600 mb-2">
+                911
+              </p>
+              <p className="text-red-600 text-sm md:text-base">
+                For immediate emergency
+              </p>
             </div>
 
-            <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-red-400">
-              <h3 className="text-lg font-semibold text-red-700 mb-2">
+            <div className="bg-white p-4 md:p-6 rounded-lg shadow-lg border-l-4 border-red-400">
+              <h3 className="text-base md:text-lg font-semibold text-red-700 mb-2">
                 Local Crisis Support
               </h3>
-              <p className="text-lg font-semibold text-red-600 mb-2">
+              <p className="text-base md:text-lg font-semibold text-red-600 mb-2">
                 (613) 722-6914
               </p>
-              <p className="text-red-600">Ottawa Crisis Line</p>
+              <p className="text-red-600 text-sm md:text-base">
+                Ottawa Crisis Line
+              </p>
             </div>
           </div>
 
-          <p className="mt-8 text-red-600 font-medium">
+          <p className="mt-6 md:mt-8 text-red-600 font-medium text-sm md:text-base">
             Remember: Seeking help is a sign of strength, not weakness. You are
             not alone in this journey.
           </p>

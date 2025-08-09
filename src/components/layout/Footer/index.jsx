@@ -1,15 +1,15 @@
 import FooterColumn from "./FooterColumn";
 import FooterLink from "./FooterLink";
 import FooterContact from "./FooterContact";
-// import FooterEmergency from "./FooterEmergency";
+import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-clarus-dark-olive text-white py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <FooterColumn logoSrc="/white_cl.png">
-            <p className="text-white-400">
+            <p className="text-clarus-lightest">
               Clarus Counselling and Psychotherapy
             </p>
           </FooterColumn>
@@ -32,11 +32,54 @@ const Footer = () => {
           </FooterColumn>
 
           <FooterContact />
+
+          {/* Social Media Column */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-white">Follow Us</h3>
+            <div className="flex space-x-4">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-clarus-sage-green rounded-full flex items-center justify-center hover:bg-clarus-accent-green transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5 text-white" />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-clarus-sage-green rounded-full flex items-center justify-center hover:bg-clarus-accent-green transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5 text-white" />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-clarus-sage-green rounded-full flex items-center justify-center hover:bg-clarus-accent-green transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-5 h-5 text-white" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-clarus-sage-green rounded-full flex items-center justify-center hover:bg-clarus-accent-green transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5 text-white" />
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-white-400">
+        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-clarus-lightest">
           <p>
-            Clarus Counselling and Psychotherapyy &copy;2025. All rights
+            Clarus Counselling and Psychotherapy &copy; 2025. All rights
             reserved.
           </p>
         </div>

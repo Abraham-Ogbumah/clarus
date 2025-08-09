@@ -60,15 +60,15 @@ const AboutPage = () => {
             style={{ backgroundImage: "url('/about_hero.jpg')" }}
           />
 
-          {/* Content Container */}
+          {/* Content Container - Centered */}
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center md:text-left max-w-2xl">
-              <h1 className="text-5xl font-serif text-white mb-6">
+            <div className="text-center">
+              <h1 className="text-5xl md:text-6xl font-serif text-white mb-6">
                 Meet Dorothy
               </h1>
-              <p className="text-xl text-clarus-lightest mb-8">
+              <p className="text-xl md:text-2xl text-clarus-lightest max-w-4xl mx-auto">
                 As a Registered Psychotherapist, I believe healing begins in
-                connection — with yourself and with someone who truly sees you.
+                connection—with yourself and with someone who truly sees you.
                 Together, we&apos;ll uncover your strength, nurture growth, and
                 take steps toward lasting change.
               </p>
@@ -134,7 +134,7 @@ const AboutPage = () => {
           <p className="text-lg text-clarus-dark-grey leading-relaxed">
             My own healing journey began as a teenager, when the care and
             guidance of a beloved teacher helped me rediscover my voice. That
-            experience planted the seed for the work I do today — creating safe,
+            experience planted the seed for the work I do today—creating safe,
             affirming spaces where others can find their way back to themselves.
           </p>
           <p className="text-xl text-clarus-olive-green mt-6 font-medium">
@@ -149,6 +149,7 @@ const AboutPage = () => {
         <PageHeader
           title="Therapeutic Approaches"
           subtitle="Evidence-based methods tailored to your unique needs"
+          className="text-clarus-dark-grey"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {approaches.map((approach, index) => (

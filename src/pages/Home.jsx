@@ -53,6 +53,19 @@ const HomePage = () => {
     <main>
       <Hero />
 
+      {/* Hope Section - New stylish section */}
+      <Section className="bg-gradient-to-br from-clarus-olive-green to-clarus-dark-olive text-white">
+        <div className="max-w-4xl mx-auto text-center py-8">
+          <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight">
+            Hope isn&apos;t gone—it&apos;s just waiting to be found. Let&apos;s
+            look for it, side by side.
+          </h2>
+          <p className="text-xl md:text-2xl italic opacity-90">
+            This is your safe space for healing and rediscovery.
+          </p>
+        </div>
+      </Section>
+
       <Section className="bg-white">
         <AboutCard
           title="Your Journey Starts Here"
@@ -73,10 +86,11 @@ const HomePage = () => {
         </div>
       </Section>
 
-      <Section className="bg-gray-50">
+      <Section className="bg-white">
         <PageHeader
           title="Client Stories"
           subtitle="Hear from people we've helped"
+          className="text-clarus-dark-grey"
         />
         <div className="max-w-3xl mx-auto">
           {testimonials.map((testimonial, index) => (
