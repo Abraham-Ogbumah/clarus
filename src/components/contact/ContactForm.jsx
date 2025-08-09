@@ -26,20 +26,22 @@ const ContactForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-2">
       <Input
-        label="Name"
+        label="Name *"
         name="name"
         value={formData.name}
         onChange={handleChange}
+        placeholder="Enter your full name"
         required
       />
       <Input
-        label="Email"
+        label="Email *"
         name="email"
         type="email"
         value={formData.email}
         onChange={handleChange}
+        placeholder="Enter your email address"
         required
       />
       <Input
@@ -48,16 +50,21 @@ const ContactForm = ({ onSubmit }) => {
         type="tel"
         value={formData.phone}
         onChange={handleChange}
+        placeholder="Enter your phone number"
       />
       <TextArea
-        label="Message"
+        label="Message *"
         name="message"
         value={formData.message}
         onChange={handleChange}
-        rows="4"
+        rows="5"
+        placeholder="Tell us how we can help you..."
         required
       />
-      <Button type="submit" className="w-full">
+      <Button
+        type="submit"
+        className="w-full bg-clarus-accent-green hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-md transition-all duration-200 border-0 shadow-md hover:shadow-lg"
+      >
         Send Message
       </Button>
     </form>

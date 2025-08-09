@@ -1,53 +1,40 @@
-import QualificationCard from "../components/about/QualificationCard";
+import ContactForm from "../components/contact/ContactForm";
+import ContactInfo from "../components/contact/ContactInfo";
 import Section from "../components/common/Section";
 import PageHeader from "../components/common/PageHeader";
+import Button from "../components/common/Button";
+import { MapPin, Phone, Mail, Clock, Calendar } from "lucide-react";
 
-const AboutPage = () => {
-  const qualifications = [
+const ContactPage = () => {
+  const handleSubmit = (formData) => {
+    console.log("Form submitted:", formData);
+    // Handle form submission logic here
+    alert("Thank you for your message. We'll get back to you within 24 hours.");
+  };
+
+  const contactInfo = [
     {
-      year: "2018",
-      title: "Master of Arts in Counselling Psychology",
-      institution: "University of British Columbia",
+      icon: <MapPin className="w-6 h-6 text-clarus-accent-green" />,
+      title: "Office Location",
+      content: "404 McArthur Ave\nOttawa, ON K1K 1G8",
     },
     {
-      year: "2020",
-      title: "Certified in Cognitive Behavioral Therapy",
-      institution:
-        "Canadian Association of Cognitive and Behavioural Therapies",
+      icon: <Phone className="w-6 h-6 text-clarus-accent-green" />,
+      title: "Phone",
+      content: "(438) 308-4595",
     },
     {
-      year: "2021",
-      title: "Gottman Method Couples Therapy Training",
-      institution: "The Gottman Institute",
-    },
-    {
-      year: "2022",
-      title: "Trauma-Informed Care Certification",
-      institution: "Trauma Informed Canada",
+      icon: <Mail className="w-6 h-6 text-clarus-accent-green" />,
+      title: "Email",
+      content: "dorothy@claruspsychotherapy.com",
     },
   ];
 
-  const approaches = [
-    {
-      title: "Cognitive Behavioral Therapy (CBT)",
-      description:
-        "Evidence-based approach that helps identify and change negative thought patterns and behaviors.",
-    },
-    {
-      title: "Solution-Focused Therapy",
-      description:
-        "Goal-oriented approach that focuses on solutions and strengths rather than problems.",
-    },
-    {
-      title: "Narrative Therapy",
-      description:
-        "Helps you re-author your life story by separating you from your problems.",
-    },
-    {
-      title: "Gottman Method",
-      description:
-        "Research-based approach for couples therapy that builds stronger relationships.",
-    },
+  const officeHours = [
+    { day: "Monday - Thursday", hours: "9:00 AM - 7:00 PM" },
+    { day: "Friday", hours: "9:00 AM - 5:00 PM" },
+    { day: "Saturday", hours: "10:00 AM - 3:00 PM" },
+    { day: "Sunday", hours: "Closed" },
   ];
 
   return (
@@ -55,115 +42,220 @@ const AboutPage = () => {
       {/* Hero Section */}
       <section className="relative bg-clarus-dark-olive overflow-hidden">
         <div className="py-32 relative max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Background Image positioned to the right */}
+          {/* Background Image */}
           <div
             className="absolute inset-0 bg-contain bg-right bg-no-repeat opacity-40"
-            style={{ backgroundImage: "url('/about_hero.jpg')" }}
+            style={{ backgroundImage: "url('/contact_hero.jpg')" }}
           />
 
-          {/* Content Container */}
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center md:text-left max-w-2xl">
               <h1 className="text-5xl font-serif text-white mb-6">
-                Meet Dorothy
+                Get in Touch
               </h1>
               <p className="text-xl text-clarus-lightest mb-8">
-                Your partner in healing, growth, and discovering the strength
-                within you.
+                Ready to take the first step? We&apos;re here to support you on
+                your journey to wellness.
               </p>
+              <Button variant="primary" size="large">
+                Book Your Session
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
+      {/* Contact Form & Info */}
+      <Section className="bg-gray-50">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Contact Form */}
+          <div>
+            <h2 className="text-3xl font-serif text-clarus-olive-green mb-6">
+              Send us a Message
+            </h2>
+            <p className="text-clarus-dark-grey mb-8">
+              Fill out the form below and we&apos;ll get back to you within 24
+              hours. All communications are confidential.
+            </p>
+            <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+              <ContactForm onSubmit={handleSubmit} />
+            </div>
+          </div>
+
+          {/* Contact Information */}
+          <div>
+            <h2 className="text-3xl font-serif text-clarus-olive-green mb-6">
+              Contact Information
+            </h2>
+            <div className="space-y-6 mb-8">
+              {contactInfo.map((info, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-6 rounded-lg shadow-md border-l-4 border-clarus-accent-green"
+                >
+                  <ContactInfo {...info} />
+                </div>
+              ))}
+            </div>
+
+            {/* Office Hours */}
+            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-clarus-olive-green">
+              <div className="flex items-center mb-4">
+                <Clock className="w-6 h-6 text-clarus-accent-green mr-3" />
+                <h3 className="text-xl font-semibold text-clarus-olive-green">
+                  Office Hours
+                </h3>
+              </div>
+              <div className="space-y-3">
+                {officeHours.map((schedule, index) => (
+                  <div key={index} className="flex justify-between">
+                    <span className="text-clarus-dark-grey font-medium">
+                      {schedule.day}
+                    </span>
+                    <span className="text-clarus-dark-grey">
+                      {schedule.hours}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Quick Booking */}
+            <div className="mt-6 bg-clarus-olive-green text-white p-6 rounded-lg shadow-md">
+              <div className="flex items-center mb-4">
+                <Calendar className="w-6 h-6 text-clarus-lightest mr-3" />
+                <h3 className="text-xl font-semibold">Ready to Book?</h3>
+              </div>
+              <p className="mb-4 opacity-90">
+                Schedule your initial consultation online or give us a call. We
+                offer both in-person and virtual sessions.
+              </p>
+              <Button
+                variant="primary"
+                className="bg-clarus-accent-green hover:bg-green-600 border-0"
+              >
+                Book Online
+              </Button>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Location & Directions */}
       <Section className="bg-white">
+        <PageHeader
+          title="Visit Our Office"
+          subtitle="Convenient location in Ottawa with easy access and parking"
+        />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <img
-              src="/dorothy_profile.jpg"
-              alt="Dorothy - Clarus Psychotherapy"
-              className="w-full h-auto rounded-lg shadow-md"
-            />
+            <h3 className="text-2xl font-semibold text-clarus-olive-green mb-4">
+              Getting Here
+            </h3>
+            <div className="space-y-4 text-clarus-dark-grey">
+              <p>
+                <strong className="text-clarus-olive-green">By Car:</strong>{" "}
+                Ample free parking available on-site. We&apos;re easily
+                accessible from Highway 417 and Vanier Parkway.
+              </p>
+              <p>
+                <strong className="text-clarus-olive-green">
+                  By Public Transit:
+                </strong>{" "}
+                Multiple OC Transpo routes serve the area. The nearest stop is
+                just a 3-minute walk from our office.
+              </p>
+              <p>
+                <strong className="text-clarus-olive-green">
+                  Accessibility:
+                </strong>{" "}
+                Our office is wheelchair accessible with barrier-free entrances
+                and washroom facilities.
+              </p>
+            </div>
+
+            <div className="mt-6 p-6 bg-gray-50 rounded-lg shadow-sm border-l-4 border-clarus-accent-green">
+              <h4 className="font-semibold text-clarus-olive-green mb-4 text-lg">
+                Office Features
+              </h4>
+              <ul className="space-y-2 text-clarus-dark-grey">
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  Private, soundproof therapy rooms
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  Comfortable waiting area
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  Free Wi-Fi and refreshments
+                </li>
+                <li className="flex items-start">
+                  <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  Confidential and secure environment
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div>
-            <p className="text-sm font-semibold text-clarus-accent-green uppercase tracking-wide">
-              About Dorothy
-            </p>
-            <h2 className="mt-2 text-4xl font-bold text-clarus-olive-green">
-              Dedicated to Your Wellness Journey
-            </h2>
-            <p className="mt-4 text-lg text-clarus-medium-green border-l-2 border-clarus-light-green pl-4 mb-6">
-              With over seven years of experience in mental health counseling, I
-              am passionate about helping individuals, couples, and families
-              navigate life&apos;s challenges with compassion and evidence-based
-              care.
-            </p>
-            <p className="text-clarus-dark-grey mb-6">
-              My approach is rooted in creating a safe, non-judgmental space
-              where you can explore your thoughts and feelings freely. I believe
-              that everyone has the capacity for growth and healing, and my role
-              is to walk alongside you on this journey.
-            </p>
-            <p className="text-clarus-dark-grey mb-8">
-              I specialize in working with diverse populations, including those
-              experiencing immigration stress, trauma, relationship challenges,
-              and life transitions. My practice is trauma-informed and
-              culturally sensitive, ensuring that every client feels understood
-              and valued.
-            </p>
+            {/* Placeholder for map - you would integrate with Google Maps or similar */}
+            <div className="bg-gradient-to-br from-clarus-light-grey to-gray-200 rounded-lg h-80 flex items-center justify-center shadow-md border">
+              <div className="text-center text-clarus-dark-grey">
+                <MapPin className="w-12 h-12 mx-auto mb-4 text-clarus-accent-green" />
+                <p className="font-semibold text-lg">
+                  Interactive map would go here
+                </p>
+                <p className="text-sm mt-2">404 McArthur Ave, Ottawa, ON</p>
+              </div>
+            </div>
           </div>
         </div>
       </Section>
 
-      {/* Therapeutic Approaches */}
-      <Section className="bg-clarus-light-grey">
-        <PageHeader
-          title="Therapeutic Approaches"
-          subtitle="Evidence-based methods tailored to your unique needs"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {approaches.map((approach, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
-            >
-              <h3 className="text-xl font-semibold text-clarus-olive-green mb-3">
-                {approach.title}
-              </h3>
-              <p className="text-clarus-dark-grey">{approach.description}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Education & Training */}
-      <Section className="bg-white">
-        <PageHeader
-          title="Education & Training"
-          subtitle="Ongoing commitment to professional excellence"
-        />
-        <div className="max-w-4xl mx-auto">
-          {qualifications.map((qual, index) => (
-            <QualificationCard key={index} {...qual} />
-          ))}
-        </div>
-      </Section>
-
-      {/* Philosophy Section */}
-      <Section className="bg-clarus-olive-green text-white">
+      {/* Emergency Resources */}
+      <Section className="bg-red-50 border-t-4 border-red-400">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-serif mb-8">My Philosophy</h2>
-          <p className="text-xl mb-6 leading-relaxed">
-            &ldquo;Healing is not about returning to who you were before, but
-            about discovering who you can become.&rdquo;
+          <h2 className="text-3xl font-serif text-red-700 mb-6">
+            Crisis &amp; Emergency Resources
+          </h2>
+          <p className="text-red-600 mb-8 text-lg">
+            If you are experiencing a mental health emergency or having thoughts
+            of self-harm, please reach out for immediate help.
           </p>
-          <p className="text-lg opacity-90 leading-relaxed">
-            I believe that every person deserves to live a life filled with
-            meaning, connection, and hope. Through our work together, we&apos;ll
-            explore your strengths, process your experiences, and develop the
-            tools you need to create lasting positive change in your life.
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-red-400">
+              <h3 className="text-lg font-semibold text-red-700 mb-2">
+                Crisis Line
+              </h3>
+              <p className="text-3xl font-bold text-red-600 mb-2">988</p>
+              <p className="text-red-600">24/7 National Crisis Line</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-red-400">
+              <h3 className="text-lg font-semibold text-red-700 mb-2">
+                Emergency Services
+              </h3>
+              <p className="text-3xl font-bold text-red-600 mb-2">911</p>
+              <p className="text-red-600">For immediate emergency</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-red-400">
+              <h3 className="text-lg font-semibold text-red-700 mb-2">
+                Local Crisis Support
+              </h3>
+              <p className="text-lg font-semibold text-red-600 mb-2">
+                (613) 722-6914
+              </p>
+              <p className="text-red-600">Ottawa Crisis Line</p>
+            </div>
+          </div>
+
+          <p className="mt-8 text-red-600 font-medium">
+            Remember: Seeking help is a sign of strength, not weakness. You are
+            not alone in this journey.
           </p>
         </div>
       </Section>
@@ -171,4 +263,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default ContactPage;

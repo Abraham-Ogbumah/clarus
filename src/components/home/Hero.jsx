@@ -13,18 +13,14 @@ const Hero = () => {
         {/* Content Container */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center md:text-left">
-            <h1 className="text-5xl font-serif text-white mb-6">
-              There’s Hope. Let’s Find It Together.
+            <h1 className="text-5xl font-serif text-white mb-6 leading-tight">
+              Hope isn&apos;t gone—it&apos;s just waiting to be found.
+              Let&apos;s look for it, side by side.
             </h1>
-            <p className="text-xl text-clarus-lightest mb-8 max-w-2xl mx-auto md:mx-0">
-              A safe space for healing, growth, and the courage to start again.
+            <p className="text-xl text-clarus-lightest mb-8 max-w-2xl mx-auto md:mx-0 italic">
+              This is your safe space for healing and rediscovery.
             </p>
-            <Button
-              href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
-              target="_blank"
-              variant="primary"
-              size="large"
-            >
+            <Button variant="primary" size="large">
               Book Your Session
             </Button>
           </div>

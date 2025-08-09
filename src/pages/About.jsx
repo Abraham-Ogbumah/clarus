@@ -5,31 +5,25 @@ import PageHeader from "../components/common/PageHeader";
 const AboutPage = () => {
   const qualifications = [
     {
-      year: "2018",
-      title: "Master of Arts in Counselling Psychology",
-      institution: "University of British Columbia",
+      year: "2025",
+      title: "Business Management",
+      institution: "Professional Development",
     },
     {
-      year: "2020",
-      title: "Certified in Cognitive Behavioral Therapy",
-      institution:
-        "Canadian Association of Cognitive and Behavioural Therapies",
-    },
-    {
-      year: "2021",
-      title: "Gottman Method Couples Therapy Training",
+      year: "2024",
+      title: "Gottman Method Couples Therapy: Level 1 & 2",
       institution: "The Gottman Institute",
     },
     {
       year: "2022",
-      title: "Trauma-Informed Care Certification",
-      institution: "Trauma Informed Canada",
+      title: "Master of Arts Counselling Psychology",
+      institution: "Yorkville University",
     },
   ];
 
   const approaches = [
     {
-      title: "Cognitive Behavioral Therapy (CBT)",
+      title: "Cognitive Behavioural Therapy (CBT)",
       description:
         "Evidence-based approach that helps identify and change negative thought patterns and behaviors.",
     },
@@ -47,6 +41,11 @@ const AboutPage = () => {
       title: "Gottman Method",
       description:
         "Research-based approach for couples therapy that builds stronger relationships.",
+    },
+    {
+      title: "Mindful Practices",
+      description:
+        "Incorporating mindfulness techniques to enhance present-moment awareness and emotional regulation.",
     },
   ];
 
@@ -68,8 +67,10 @@ const AboutPage = () => {
                 Meet Dorothy
               </h1>
               <p className="text-xl text-clarus-lightest mb-8">
-                Your partner in healing, growth, and discovering the strength
-                within you.
+                As a Registered Psychotherapist, I believe healing begins in
+                connection — with yourself and with someone who truly sees you.
+                Together, we&apos;ll uncover your strength, nurture growth, and
+                take steps toward lasting change.
               </p>
             </div>
           </div>
@@ -94,40 +95,66 @@ const AboutPage = () => {
             <h2 className="mt-2 text-4xl font-bold text-clarus-olive-green">
               Dedicated to Your Wellness Journey
             </h2>
-            <p className="mt-4 text-lg text-clarus-medium-green border-l-2 border-clarus-light-green pl-4 mb-6">
-              With over seven years of experience in mental health counseling, I
-              am passionate about helping individuals, couples, and families
-              navigate life&apos;s challenges with compassion and evidence-based
-              care.
+            <p className="mt-4 text-lg text-clarus-dark-grey border-l-4 border-clarus-accent-green pl-4 mb-6">
+              With over seven years of experience in mental health counselling,
+              I&apos;m passionate about supporting individuals, couples, and
+              families as they navigate life&apos;s challenges—from anxiety and
+              trauma to relationship struggles and major life transitions.
             </p>
             <p className="text-clarus-dark-grey mb-6">
-              My approach is rooted in creating a safe, non-judgmental space
-              where you can explore your thoughts and feelings freely. I believe
-              that everyone has the capacity for growth and healing, and my role
-              is to walk alongside you on this journey.
+              My approach is grounded in empathy, cultural sensitivity, and
+              evidence-based care. I strive to create a warm, non-judgmental
+              space where you can speak freely, feel heard, and begin to heal.
+            </p>
+            <p className="text-clarus-dark-grey mb-6">
+              I have a special interest in working with people from diverse
+              backgrounds, including those facing immigration-related stress,
+              intergenerational trauma, or identity shifts. I believe that
+              growth is always possible—and that healing begins when we feel
+              safe, seen, and supported.
             </p>
             <p className="text-clarus-dark-grey mb-8">
-              I specialize in working with diverse populations, including those
-              experiencing immigration stress, trauma, relationship challenges,
-              and life transitions. My practice is trauma-informed and
-              culturally sensitive, ensuring that every client feels understood
-              and valued.
+              As a Registered Psychotherapist (RP) in Ontario, I use a range of
+              evidence-based approaches tailored to your unique needs, including
+              Cognitive Behavioural Therapy (CBT), Solution-Focused Therapy,
+              Narrative Therapy, Mindful practices and the Gottman Method for
+              couples. My practice is trauma-informed and culturally responsive,
+              ensuring that every client feels respected and valued.
             </p>
           </div>
         </div>
       </Section>
 
-      {/* Therapeutic Approaches */}
+      {/* Personal Story Section */}
       <Section className="bg-clarus-light-grey">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-serif text-clarus-olive-green mb-8">
+            My Journey to This Work
+          </h2>
+          <p className="text-lg text-clarus-dark-grey leading-relaxed">
+            My own healing journey began as a teenager, when the care and
+            guidance of a beloved teacher helped me rediscover my voice. That
+            experience planted the seed for the work I do today — creating safe,
+            affirming spaces where others can find their way back to themselves.
+          </p>
+          <p className="text-xl text-clarus-olive-green mt-6 font-medium">
+            Wherever you are in your journey, you don&apos;t have to walk it
+            alone.
+          </p>
+        </div>
+      </Section>
+
+      {/* Therapeutic Approaches */}
+      <Section className="bg-white">
         <PageHeader
           title="Therapeutic Approaches"
           subtitle="Evidence-based methods tailored to your unique needs"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {approaches.map((approach, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-clarus-accent-green"
             >
               <h3 className="text-xl font-semibold text-clarus-olive-green mb-3">
                 {approach.title}
@@ -139,9 +166,9 @@ const AboutPage = () => {
       </Section>
 
       {/* Education & Training */}
-      <Section className="bg-white">
+      <Section className="bg-clarus-light-grey">
         <PageHeader
-          title="Education & Training"
+          title="Education &amp; Training"
           subtitle="Ongoing commitment to professional excellence"
         />
         <div className="max-w-4xl mx-auto">
@@ -156,8 +183,8 @@ const AboutPage = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-serif mb-8">My Philosophy</h2>
           <p className="text-xl mb-6 leading-relaxed">
-            &ldquo;Healing is not about returning to who you were before, but
-            about discovering who you can become.&rdquo;
+            &ldquo;Healing begins in connection—with yourself and with someone
+            who truly sees you.&rdquo;
           </p>
           <p className="text-lg opacity-90 leading-relaxed">
             I believe that every person deserves to live a life filled with

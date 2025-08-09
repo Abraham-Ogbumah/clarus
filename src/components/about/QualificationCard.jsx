@@ -4,11 +4,15 @@ const QualificationCard = ({ year, title, institution }) => {
   return (
     <div className="flex mb-8 last:mb-0">
       <div className="flex-shrink-0 w-24 pt-1">
-        <span className="font-semibold text-teal-600">{year}</span>
+        <span className="font-bold text-clarus-accent-green text-lg">
+          {year}
+        </span>
       </div>
-      <div className="flex-grow pl-8 border-l-2 border-teal-200">
-        <h3 className="font-semibold text-lg mb-1">{title}</h3>
-        <p className="text-gray-600">{institution}</p>
+      <div className="flex-grow pl-8 border-l-4 border-clarus-accent-green">
+        <h3 className="font-semibold text-xl mb-2 text-clarus-olive-green">
+          {title}
+        </h3>
+        <p className="text-clarus-dark-grey font-medium">{institution}</p>
       </div>
     </div>
   );
