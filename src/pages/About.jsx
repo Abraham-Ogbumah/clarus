@@ -89,7 +89,7 @@ const AboutPage = () => {
               Dedicated to Your Wellness Journey
             </h2>
             <p className="mt-4 text-lg text-clarus-dark-grey border-l-4 border-clarus-accent-green pl-4 mb-6">
-              With over seven years of experience in mental health counselling,
+              With over ten years of experience in mental health counselling,
               I&apos;m passionate about supporting individuals, couples, and
               families as they navigate life&apos;s challenges—from anxiety and
               trauma to relationship struggles and major life transitions.

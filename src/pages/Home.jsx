@@ -38,7 +38,7 @@ const HomePage = () => {
 
   const testimonials = [
     {
-      text: "Dr. Mitchell's approach helped me overcome my anxiety and develop better coping mechanisms.",
+      text: "Dorothy's approach helped me overcome my anxiety and develop better coping mechanisms.",
       author: "Sarah J.",
       title: "Client for 8 months",
     },
