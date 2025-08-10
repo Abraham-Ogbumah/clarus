@@ -14,7 +14,10 @@ const Footer = () => {
             </p>
           </FooterColumn>
 
-          <FooterColumn title="Quick Links">
+          <div title="Quick Links">
+            <h3 className="text-lg font-semibold mb-4 text-white">
+              Quick Links
+            </h3>
             <ul className="space-y-2">
               <li>
                 <FooterLink href="/">Home</FooterLink>
@@ -29,7 +32,7 @@ const Footer = () => {
                 <FooterLink href="/contact">Contact</FooterLink>
               </li>
             </ul>
-          </FooterColumn>
+          </div>
 
           <FooterContact />
 

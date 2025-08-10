@@ -1,8 +1,7 @@
-import FooterColumn from "./FooterColumn";
-
 const FooterContact = () => {
   return (
-    <FooterColumn title="Contact">
+    <div title="Contact">
+      <h3 className="text-lg font-semibold mb-4 text-white">Contact</h3>
       <ul className="space-y-2 text-white-400">
         <li>
           404 McArthur Ave
@@ -12,7 +11,7 @@ const FooterContact = () => {
         <li>(438) 308-4595</li>
         <li>dorothy@claruspsychotherapy.com</li>
       </ul>
-    </FooterColumn>
+    </div>
   );
 };
 
