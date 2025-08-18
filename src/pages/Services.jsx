@@ -229,8 +229,8 @@ const ServicesPage = () => {
                 <span className="font-semibold">$0</span>
               </li>
               <li className="flex justify-between items-center py-2">
-                <span>Immigration Counselling (50 min)</span>
-                <span className="font-semibold">$220</span>
+                <span>Immigration Counselling / Case Management (60 min)</span>
+                <span className="font-semibold">$205</span>
               </li>
             </ul>
           </div>
