@@ -1,5 +1,4 @@
 import ServiceCard from "../components/services/ServiceCard";
-import TestimonialCard from "../components/testimonials/TestimonialCard";
 import Section from "../components/common/Section";
 import PageHeader from "../components/common/PageHeader";
 import Hero from "../components/home/Hero";
@@ -34,18 +33,22 @@ const HomePage = () => {
       format: "In-person or Online",
       text: "As your perinatal therapist, I will collaborate with you through pregnancy, birth, and postpartum wellness plans",
     },
-  ];
-
-  const testimonials = [
     {
-      text: "Dorothy's approach helped me overcome my anxiety and develop better coping mechanisms.",
-      author: "Sarah J.",
-      title: "Client for 8 months",
+      title: "Workshops and Group Facilitation",
+      description: "Creating Safe, Supportive Spaces for Growth and Connection",
+      icon: "💻",
+      duration: "240 minutes",
+      format: "In-person or Online",
+      text: "A workshop designed to help participants understand Trauma , and how it reflects in their lives and impacts their relationship with  loved ones using therapeutic tools",
     },
     {
-      text: "The online sessions are incredibly convenient and effective.",
-      author: "Michael R.",
-      title: "Client for 1 year",
+      title: "Immigration and Refugee Support",
+      description:
+        "Culturally sensitive therapy for immigration-related stress and adjustment.",
+      icon: "🌍",
+      duration: "50 minutes",
+      format: "In-person or Online",
+      text: "Navigate the emotional challenges of immigration, cultural adjustment, identity formation, and family dynamics. I understand the unique stressors faced by newcomers and provide culturally responsive care.",
     },
   ];
 
@@ -70,7 +73,7 @@ const HomePage = () => {
         <AboutCard
           title="Your Journey Starts Here"
           description="At Clarus Psychotherapy, we're here to walk alongside you through life's ups, downs, and everything in between. Whether you're navigating anxiety, addiction, depression, relationship struggles, prenatal distress, or major life transitions, you don't have to do it alone. We support individuals, couples, and families from all walks of life—including those facing the unique challenges of immigration-related stress and trauma. With over seven years of experience, we use proven, evidence-based approaches like Cognitive Behavioural Therapy (CBT), Solution-Focused Therapy, Narrative Therapy, and the Gottman Method to help you tap into your strengths and move forward with clarity and confidence. Rooted in a trauma-informed and deeply empathetic approach, Clarus Psychotherapy offers a safe, welcoming, and non-judgmental space for healing, growth, and meaningful change. Let's take the next step—together."
-          imageSrc="./home_2.jpg"
+          imageSrc="./Golden_Morning.png"
         />
       </Section>
 
@@ -86,7 +89,7 @@ const HomePage = () => {
         </div>
       </Section>
 
-      <Section className="bg-white">
+      {/* <Section className="bg-white">
         <PageHeader
           title="Client Stories"
           subtitle="Hear from people we've helped"
@@ -97,7 +100,7 @@ const HomePage = () => {
             <TestimonialCard key={index} {...testimonial} />
           ))}
         </div>
-      </Section>
+      </Section> */}
     </main>
   );
 };

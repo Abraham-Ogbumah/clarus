@@ -8,7 +8,7 @@ const FooterContact = () => {
           <br />
           Ottawa, ON K1K 1G8
         </li>
-        <li>(438) 308-4595</li>
+        <li>(613) 899-4918</li>
         <li>dorothy@claruspsychotherapy.com</li>
       </ul>
     </div>

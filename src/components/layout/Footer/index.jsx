@@ -1,7 +1,7 @@
 import FooterColumn from "./FooterColumn";
 import FooterLink from "./FooterLink";
 import FooterContact from "./FooterContact";
-import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -41,40 +41,13 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-white">Follow Us</h3>
             <div className="flex space-x-4">
               <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-clarus-sage-green rounded-full flex items-center justify-center hover:bg-clarus-accent-green transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5 text-white" />
-              </a>
-              <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/clarus_psychotherapy?igsh=MWNyb2U1NDQ4bzRmdg%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-clarus-sage-green rounded-full flex items-center justify-center hover:bg-clarus-accent-green transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5 text-white" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-clarus-sage-green rounded-full flex items-center justify-center hover:bg-clarus-accent-green transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5 text-white" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-clarus-sage-green rounded-full flex items-center justify-center hover:bg-clarus-accent-green transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5 text-white" />
               </a>
             </div>
           </div>

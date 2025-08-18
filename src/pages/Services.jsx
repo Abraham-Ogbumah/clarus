@@ -52,7 +52,7 @@ const ServicesPage = () => {
       text: "Using trauma-informed approaches, we'll work at your pace to process difficult experiences, develop healthy coping mechanisms, and reclaim your sense of safety and empowerment.",
     },
     {
-      title: "Immigration Support",
+      title: "Immigration and Refugee Support",
       description:
         "Culturally sensitive therapy for immigration-related stress and adjustment.",
       icon: "🌍",
@@ -119,7 +119,7 @@ const ServicesPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <img
-              src="/therapy_session.jpg"
+              src="/village-2090495_1920.jpg"
               alt="Therapy session at Clarus Psychotherapy"
               className="w-full h-auto rounded-lg shadow-md"
             />
