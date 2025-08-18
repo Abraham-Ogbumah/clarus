@@ -71,6 +71,11 @@ const ServicesPage = () => {
     "Trauma and PTSD",
     "Addiction Recovery",
     "Cultural Identity Issues",
+    "Multicultural counselling",
+    "Bicultural issues",
+    "Caregiver",
+    "Childhood trauma",
+    "Stress management",
   ];
 
   return (
@@ -207,19 +212,23 @@ const ServicesPage = () => {
             <ul className="space-y-3 text-clarus-dark-grey">
               <li className="flex justify-between">
                 <span>Individual Therapy (50 min)</span>
-                <span className="font-semibold">$150</span>
+                <span className="font-semibold">$160</span>
               </li>
               <li className="flex justify-between">
                 <span>Couples Therapy (90 min)</span>
-                <span className="font-semibold">$220</span>
-              </li>
-              <li className="flex justify-between">
-                <span>Family Therapy (75 min)</span>
                 <span className="font-semibold">$190</span>
               </li>
               <li className="flex justify-between">
-                <span>Initial Consultation (60 min)</span>
-                <span className="font-semibold">$160</span>
+                <span>Family Therapy (75 min)</span>
+                <span className="font-semibold">$220</span>
+              </li>
+              <li className="flex justify-between">
+                <span>Initial Consultation (15 min)</span>
+                <span className="font-semibold">$0</span>
+              </li>
+              <li className="flex justify-between">
+                <span>Immigration Counselling (50 min)</span>
+                <span className="font-semibold">$205</span>
               </li>
             </ul>
           </Card>
@@ -239,7 +248,7 @@ const ServicesPage = () => {
               <li>• Payment plans available upon request</li>
               <li>• Receipts provided for all sessions</li>
             </ul>
-            <Button variant="primary">Verify Your Coverage</Button>
+            {/* <Button variant="primary">Verify Your Coverage</Button> */}
           </Card>
         </div>
       </Section>

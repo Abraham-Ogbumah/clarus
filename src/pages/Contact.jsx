@@ -21,7 +21,7 @@ const ContactPage = () => {
     {
       icon: <Phone className="w-6 h-6 text-clarus-accent-green" />,
       title: "Phone",
-      content: "(438) 308-4595",
+      content: "(613) 899-4918",
     },
     {
       icon: <Mail className="w-6 h-6 text-clarus-accent-green" />,
@@ -31,10 +31,8 @@ const ContactPage = () => {
   ];
 
   const officeHours = [
-    { day: "Monday - Thursday", hours: "9:00 AM - 7:00 PM" },
-    { day: "Friday", hours: "9:00 AM - 5:00 PM" },
-    { day: "Saturday", hours: "10:00 AM - 3:00 PM" },
-    { day: "Sunday", hours: "Closed" },
+    { day: "Monday - Friday", hours: "9:00 AM - 4:00 PM" },
+    { day: "Saturday and Sunday", hours: "Closed" },
   ];
 
   return (
@@ -202,7 +200,7 @@ const ContactPage = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Free Wi-Fi and refreshments
+                  Free Wi-Fi
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
