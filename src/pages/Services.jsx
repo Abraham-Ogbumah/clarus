@@ -1,7 +1,6 @@
 import ServiceCard from "../components/services/ServiceCard";
 import Section from "../components/common/Section";
 import PageHeader from "../components/common/PageHeader";
-import Card from "../components/common/Card";
 import Button from "../components/common/Button";
 
 const ServicesPage = () => {
@@ -22,7 +21,7 @@ const ServicesPage = () => {
       icon: "👥",
       duration: "90 minutes",
       format: "In-person or Online",
-      text: "Relationship counseling and therapy for couples are about addressing problems and building a foundation for a stronger, more fulfilling partnership. It's about learning, growing, and finding ways to connect more deeply with each other.",
+      text: "Relationship counselling and therapy for couples are about addressing problems and building a foundation for a stronger, more fulfilling partnership. It's about learning, growing, and finding ways to connect more deeply with each other.",
     },
     {
       title: "Pregnancy and Postpartum Support",
@@ -52,7 +51,7 @@ const ServicesPage = () => {
       text: "Using trauma-informed approaches, we'll work at your pace to process difficult experiences, develop healthy coping mechanisms, and reclaim your sense of safety and empowerment.",
     },
     {
-      title: "Immigration and Refugee Support",
+      title: "Immigration Support",
       description:
         "Culturally sensitive therapy for immigration-related stress and adjustment.",
       icon: "🌍",
@@ -80,25 +79,24 @@ const ServicesPage = () => {
 
   return (
     <main>
-      {/* Hero Section */}
+      {/* Hero Section - Centered like other pages */}
       <section className="relative bg-clarus-dark-olive overflow-hidden">
         <div className="py-32 relative max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Background Image */}
-          <div
-            className="absolute inset-0 bg-contain bg-right bg-no-repeat opacity-40"
-            style={{ backgroundImage: "url('/services_hero.jpg')" }}
-          />
-
+          {/* Content Container - Centered */}
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center md:text-left max-w-2xl">
-              <h1 className="text-5xl font-serif text-white mb-6">
+            <div className="text-center">
+              <h1 className="text-5xl md:text-6xl font-serif text-white mb-6">
                 Counselling Services
               </h1>
-              <p className="text-xl text-clarus-lightest mb-8">
+              <p className="text-xl md:text-2xl text-clarus-lightest max-w-3xl mx-auto mb-8">
                 Comprehensive mental health support tailored to your unique
                 journey and needs.
               </p>
-              <Button variant="primary" size="large">
+              <Button
+                variant="primary"
+                size="large"
+                className="px-8 py-4 text-lg"
+              >
                 Schedule a Consultation
               </Button>
             </div>
@@ -137,19 +135,20 @@ const ServicesPage = () => {
             <h2 className="mt-2 text-4xl font-bold text-clarus-olive-green mb-6">
               Conditions We Treat
             </h2>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {specializations.map((specialization, index) => (
                 <div key={index} className="flex items-center">
-                  <span className="w-2 h-2 bg-clarus-accent-green rounded-full mr-3"></span>
+                  <span className="w-2 h-2 bg-clarus-accent-green rounded-full mr-3 flex-shrink-0"></span>
                   <span className="text-clarus-dark-grey">
                     {specialization}
                   </span>
                 </div>
               ))}
             </div>
-            <p className="mt-6 text-clarus-medium-green border-l-2 border-clarus-light-green pl-4">
-              Every individuals journey is unique. We tailor our approach to
-              meet your specific needs, cultural background, and personal goals.
+            <p className="mt-6 text-clarus-dark-grey border-l-4 border-clarus-accent-green pl-4">
+              Every individual&apos;s journey is unique. We tailor our approach
+              to meet your specific needs, cultural background, and personal
+              goals.
             </p>
           </div>
         </div>
@@ -157,14 +156,17 @@ const ServicesPage = () => {
 
       {/* Process Section */}
       <Section className="bg-clarus-olive-green text-white">
-        <PageHeader
-          title="How We Work Together"
-          subtitle="Your therapeutic journey, step by step"
-          className="text-white"
-        />
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-serif mb-4 text-white">
+            How We Work Together
+          </h1>
+          <p className="text-xl text-clarus-lightest">
+            Your therapeutic journey, step by step
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center">
-            <div className="w-16 h-16 bg-clarus-accent-green rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+            <div className="w-16 h-16 bg-clarus-accent-green rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
               1
             </div>
             <h3 className="text-xl font-semibold mb-3">Initial Consultation</h3>
@@ -174,7 +176,7 @@ const ServicesPage = () => {
             </p>
           </div>
           <div className="text-center">
-            <div className="w-16 h-16 bg-clarus-accent-green rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+            <div className="w-16 h-16 bg-clarus-accent-green rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
               2
             </div>
             <h3 className="text-xl font-semibold mb-3">
@@ -186,7 +188,7 @@ const ServicesPage = () => {
             </p>
           </div>
           <div className="text-center">
-            <div className="w-16 h-16 bg-clarus-accent-green rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+            <div className="w-16 h-16 bg-clarus-accent-green rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
               3
             </div>
             <h3 className="text-xl font-semibold mb-3">Ongoing Support</h3>
@@ -199,41 +201,41 @@ const ServicesPage = () => {
       </Section>
 
       {/* Insurance & Payment */}
-      <Section className="bg-white">
+      <Section className="bg-gray-50">
         <PageHeader
           title="Investment in Your Well-being"
           subtitle="Flexible payment options and insurance information"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <Card className="bg-clarus-light-grey">
+          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
             <h3 className="text-xl font-semibold text-clarus-olive-green mb-4">
               Session Rates
             </h3>
             <ul className="space-y-3 text-clarus-dark-grey">
-              <li className="flex justify-between">
+              <li className="flex justify-between items-center py-2 border-b border-gray-100">
                 <span>Individual Therapy (50 min)</span>
                 <span className="font-semibold">$160</span>
               </li>
-              <li className="flex justify-between">
+              <li className="flex justify-between items-center py-2 border-b border-gray-100">
                 <span>Couples Therapy (90 min)</span>
                 <span className="font-semibold">$190</span>
               </li>
-              <li className="flex justify-between">
+              <li className="flex justify-between items-center py-2 border-b border-gray-100">
                 <span>Family Therapy (75 min)</span>
                 <span className="font-semibold">$220</span>
               </li>
-              <li className="flex justify-between">
+              <li className="flex justify-between items-center py-2">
                 <span>Initial Consultation (15 min)</span>
                 <span className="font-semibold">$0</span>
               </li>
-              <li className="flex justify-between">
+              <li className="flex justify-between items-center py-2">
                 <span>Immigration Counselling (50 min)</span>
-                <span className="font-semibold">$205</span>
+                <span className="font-semibold">$220</span>
               </li>
             </ul>
-          </Card>
+          </div>
 
-          <Card>
+          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
             <h3 className="text-xl font-semibold text-clarus-olive-green mb-4">
               Insurance &amp; Payment
             </h3>
@@ -243,13 +245,27 @@ const ServicesPage = () => {
               benefits or private insurance.
             </p>
             <ul className="space-y-2 text-clarus-dark-grey mb-6">
-              <li>• Direct billing available for many plans</li>
-              <li>• Sliding scale options for financial hardship</li>
-              <li>• Payment plans available upon request</li>
-              <li>• Receipts provided for all sessions</li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Direct billing available for many plans
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Sliding scale options for financial hardship
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Payment plans available upon request
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                Receipts provided for all sessions
+              </li>
             </ul>
-            {/* <Button variant="primary">Verify Your Coverage</Button> */}
-          </Card>
+            {/* <Button variant="primary" className="bg-clarus-accent-green hover:bg-green-600 border-0">
+              Verify Your Coverage
+            </Button> */}
+          </div>
         </div>
       </Section>
     </main>
