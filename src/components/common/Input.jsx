@@ -9,7 +9,7 @@ const Input = ({ label, error, ...props }) => {
         </label>
       )}
       <input
-        className={`w-full px-4 py-3 border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-clarus-accent-green focus:border-clarus-accent-green transition-all duration-200
+        className={`w-full px-4 py-3 border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-clarus-accent-green focus:border-clarus-accent-green transition-all duration-200 text-gray-900 placeholder-gray-500
             ${error ? "border-red-400 bg-red-50" : "border-gray-300 bg-white hover:border-clarus-light-green"}`}
         {...props}
       />

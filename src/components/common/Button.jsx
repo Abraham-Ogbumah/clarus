@@ -10,23 +10,23 @@ const Button = ({
 }) => {
   const variants = {
     primary:
-      "bg-clarus-sage-green text-white px-4 py-2 rounded-md hover:bg-clarus-light-green transition-colors border-0",
+      "bg-clarus-sage-green text-white px-4 py-2 rounded-md hover:bg-clarus-accent-green hover:text-white transition-colors border-0",
     secondary:
-      "bg-white text-teal-600 border-2 border-teal-600 hover:bg-teal-50",
-    text: "text-teal-600 no-underline hover:text-clarus-olive-green", // updated variant
+      "bg-white text-clarus-sage-green border-2 border-clarus-sage-green hover:bg-clarus-accent-green hover:text-white hover:border-clarus-accent-green transition-colors",
+    text: "text-clarus-sage-green hover:text-clarus-accent-green underline transition-colors",
     mobile:
-      "w-full mt-2 bg-clarus-sage-green text-white px-4 py-2 rounded-md hover:bg-clarus-light-green transition-colors border-0",
+      "w-full mt-2 bg-clarus-sage-green text-white px-4 py-2 rounded-md hover:bg-clarus-accent-green hover:text-white transition-colors border-0",
   };
 
-  const sharedClasses = `px-4 py-2 rounded-md transition-all duration-300 ${variants[variant]} ${className}`;
+  const baseClasses = `px-4 py-2 rounded-md transition-all duration-300 ${variants[variant]} ${className}`;
 
+  // If href is provided, render as an anchor tag
   if (href) {
     return (
       <a
         href={href}
         target={target}
-        rel={target === "_blank" ? "noopener noreferrer" : undefined}
-        className={sharedClasses}
+        className={`${baseClasses} inline-block text-center no-underline`}
         {...props}
       >
         {children}
@@ -34,8 +34,9 @@ const Button = ({
     );
   }
 
+  // Otherwise, render as a button
   return (
-    <button className={sharedClasses} {...props}>
+    <button className={baseClasses} {...props}>
       {children}
     </button>
   );

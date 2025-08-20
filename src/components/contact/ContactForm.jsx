@@ -12,9 +12,41 @@ const ContactForm = ({ onSubmit }) => {
     message: "",
   });
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    onSubmit?.(formData);
+    setIsSubmitting(true);
+
+    try {
+      // Here you would typically send the data to your backend/email service
+      // For now, we'll simulate the submission
+
+      // Example: await sendEmail(formData);
+
+      // Reset form after successful submission
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+
+      alert(
+        "Thank you for your message! We'll get back to you within 24 hours.",
+      );
+
+      // Call the onSubmit prop if provided
+      if (onSubmit) {
+        onSubmit(formData);
+      }
+    } catch (error) {
+      alert(
+        `There was an ${error} sending your message. Please try again or call us directly.`,
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -34,6 +66,7 @@ const ContactForm = ({ onSubmit }) => {
         onChange={handleChange}
         placeholder="Enter your full name"
         required
+        disabled={isSubmitting}
       />
       <Input
         label="Email *"
@@ -43,6 +76,7 @@ const ContactForm = ({ onSubmit }) => {
         onChange={handleChange}
         placeholder="Enter your email address"
         required
+        disabled={isSubmitting}
       />
       <Input
         label="Phone (optional)"
@@ -51,6 +85,7 @@ const ContactForm = ({ onSubmit }) => {
         value={formData.phone}
         onChange={handleChange}
         placeholder="Enter your phone number"
+        disabled={isSubmitting}
       />
       <TextArea
         label="Message *"
@@ -60,19 +95,21 @@ const ContactForm = ({ onSubmit }) => {
         rows="5"
         placeholder="Tell us how we can help you..."
         required
+        disabled={isSubmitting}
       />
       <Button
         type="submit"
-        className="w-full bg-clarus-accent-green hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-md transition-all duration-200 border-0 shadow-md hover:shadow-lg"
+        disabled={isSubmitting}
+        className={`w-full bg-clarus-accent-green hover:bg-clarus-accent-green text-white font-semibold py-3 px-6 rounded-md transition-all duration-200 border-0 shadow-md hover:shadow-lg ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
       >
-        Send Message
+        {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
     </form>
   );
 };
 
 ContactForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func,
 };
 
 export default ContactForm;

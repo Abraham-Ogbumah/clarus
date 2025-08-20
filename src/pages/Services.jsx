@@ -96,6 +96,7 @@ const ServicesPage = () => {
                 variant="primary"
                 size="large"
                 className="px-8 py-4 text-lg"
+                href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
               >
                 Schedule a Consultation
               </Button>
@@ -203,7 +204,7 @@ const ServicesPage = () => {
       {/* Insurance & Payment */}
       <Section className="bg-gray-50">
         <PageHeader
-          title="Investment in Your Well-being"
+          title="Invest in Your Well-being"
           subtitle="Flexible payment options and insurance information"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
