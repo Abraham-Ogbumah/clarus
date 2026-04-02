@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import MobileNav from "./MobileNav";
 import DesktopNav from "./DesktopNav";
 import Button from "../../common/Button";
@@ -61,7 +62,7 @@ const Navigation = () => {
               <img
                 src="/v2_cl.png"
                 alt="Clarus Psychotherapy Logo"
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
             </a>
 
@@ -73,7 +74,11 @@ const Navigation = () => {
                 aria-label={isOpen ? "Close menu" : "Open menu"}
                 className="bg-clarus-sage-green text-white-600 hover:text-white-900 focus:outline-none"
               >
-                <span className="text-2xl">{isOpen ? "✕" : "☰"}</span>
+                {isOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
               </Button>
             </div>
           </div>

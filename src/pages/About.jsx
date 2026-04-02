@@ -1,8 +1,16 @@
+import { useEffect } from "react";
 import QualificationCard from "../components/about/QualificationCard";
 import Section from "../components/common/Section";
 import PageHeader from "../components/common/PageHeader";
 
 const AboutPage = () => {
+  useEffect(() => {
+    document.title = "About Dorothy | Clarus Psychotherapy Ottawa";
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc)
+      desc.content =
+        "Meet Dorothy, Registered Psychotherapist at Clarus Psychotherapy in Ottawa. Over ten years of experience in trauma-informed, culturally sensitive mental health care.";
+  }, []);
   const qualifications = [
     {
       year: "2025",
@@ -78,6 +86,7 @@ const AboutPage = () => {
               src="/DSC01607_(2).png"
               alt="Dorothy - Clarus Psychotherapy"
               className="w-full h-auto rounded-lg shadow-md"
+              loading="lazy"
             />
           </div>
 

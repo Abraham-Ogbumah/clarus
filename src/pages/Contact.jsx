@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import ContactForm from "../components/contact/ContactForm";
 import ContactInfo from "../components/contact/ContactInfo";
 import Section from "../components/common/Section";
@@ -6,10 +7,16 @@ import Button from "../components/common/Button";
 import { MapPin, Phone, Mail, Clock, Calendar } from "lucide-react";
 
 const ContactPage = () => {
+  useEffect(() => {
+    document.title = "Contact Us | Clarus Psychotherapy Ottawa";
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc)
+      desc.content =
+        "Contact Clarus Psychotherapy in Ottawa. Call (613) 899-4918, email us, or book online. Located at 404 McArthur Ave, Ottawa, ON.";
+  }, []);
+
   const handleSubmit = (formData) => {
     console.log("Form submitted:", formData);
-    // Handle form submission logic here
-    alert("Thank you for your message. We'll get back to you within 24 hours.");
   };
 
   const contactInfo = [
@@ -212,19 +219,17 @@ const ContactPage = () => {
             </div>
           </div>
 
-          <div className="h-80 md:h-96">
-            {/* Placeholder for map - you would integrate with Google Maps or similar */}
-            <div className="bg-gradient-to-br from-clarus-light-grey to-gray-200 rounded-lg h-full flex items-center justify-center shadow-md border">
-              <div className="text-center text-clarus-dark-grey p-4">
-                <MapPin className="w-8 md:w-12 h-8 md:h-12 mx-auto mb-2 md:mb-4 text-clarus-accent-green" />
-                <p className="font-semibold text-base md:text-lg">
-                  Interactive map would go here
-                </p>
-                <p className="text-xs md:text-sm mt-1 md:mt-2">
-                  404 McArthur Ave, Ottawa, ON
-                </p>
-              </div>
-            </div>
+          <div className="h-80 md:h-96 rounded-lg overflow-hidden shadow-md border">
+            <iframe
+              title="Office Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.6!2d-75.654!3d45.4397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce055c4e5a0001%3A0x404mcarthur!2s404+McArthur+Ave%2C+Ottawa%2C+ON+K1K+1G8%2C+Canada!5e0!3m2!1sen!2sca!4v1"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </Section>

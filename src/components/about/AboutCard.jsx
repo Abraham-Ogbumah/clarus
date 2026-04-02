@@ -29,12 +29,18 @@ const AboutCard = ({
           <p className="mt-4 text-lg text-clarus-medium-green border-l-2 border-clarus-light-green pl-4">
             {description}
           </p>
-          <a
-            href="#contact"
-            className="mt-6 inline-block text-clarus-dark-green underline text-base font-medium hover:text-clarus-accent-green"
-          >
-            {ctaText}
-          </a>
+          {ctaText && (
+            <a
+              href="/contact"
+              onClick={(e) => {
+                e.preventDefault();
+                window.navigateTo("/contact");
+              }}
+              className="mt-6 inline-block text-clarus-dark-green underline text-base font-medium hover:text-clarus-accent-green"
+            >
+              {ctaText}
+            </a>
+          )}
         </div>
       </div>
     </div>

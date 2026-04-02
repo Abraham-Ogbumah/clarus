@@ -31,7 +31,11 @@ const MobileNav = ({ isOpen, currentPath, setIsOpen }) => {
             {label}
           </a>
         ))}
-        <Button variant="mobile" size="large">
+        <Button
+          variant="mobile"
+          size="large"
+          href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
+        >
           Book Your Session
         </Button>
       </div>

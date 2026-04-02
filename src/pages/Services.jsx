@@ -1,9 +1,17 @@
+import { useEffect } from "react";
 import ServiceCard from "../components/services/ServiceCard";
 import Section from "../components/common/Section";
 import PageHeader from "../components/common/PageHeader";
 import Button from "../components/common/Button";
 
 const ServicesPage = () => {
+  useEffect(() => {
+    document.title = "Counselling Services | Clarus Psychotherapy Ottawa";
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc)
+      desc.content =
+        "Individual, couples, family, trauma, pregnancy, and immigration counselling in Ottawa. Evidence-based therapy tailored to your unique needs.";
+  }, []);
   const services = [
     {
       title: "Individual Therapy",
@@ -79,10 +87,14 @@ const ServicesPage = () => {
 
   return (
     <main>
-      {/* Hero Section - Centered like other pages */}
+      {/* Hero Section */}
       <section className="relative bg-clarus-dark-olive overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('/home_2.jpg')" }}
+          aria-hidden="true"
+        />
         <div className="py-32 relative max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Content Container - Centered */}
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-5xl md:text-6xl font-serif text-white mb-6">
@@ -158,9 +170,9 @@ const ServicesPage = () => {
       {/* Process Section */}
       <Section className="bg-clarus-olive-green text-white">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-serif mb-4 text-white">
+          <h2 className="text-4xl font-serif mb-4 text-white">
             How We Work Together
-          </h1>
+          </h2>
           <p className="text-xl text-clarus-lightest">
             Your therapeutic journey, step by step
           </p>

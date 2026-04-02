@@ -13,6 +13,7 @@ const ContactForm = ({ onSubmit }) => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,18 +33,14 @@ const ContactForm = ({ onSubmit }) => {
         message: "",
       });
 
-      alert(
-        "Thank you for your message! We'll get back to you within 24 hours.",
-      );
+      setSubmitStatus("success");
 
       // Call the onSubmit prop if provided
       if (onSubmit) {
         onSubmit(formData);
       }
-    } catch (error) {
-      alert(
-        `There was an ${error} sending your message. Please try again or call us directly.`,
-      );
+    } catch {
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
@@ -97,6 +94,18 @@ const ContactForm = ({ onSubmit }) => {
         required
         disabled={isSubmitting}
       />
+      {submitStatus === "success" && (
+        <div className="rounded-md bg-green-50 border border-green-200 p-4 text-green-800 text-sm">
+          Thank you for your message! We&apos;ll get back to you within 24
+          hours.
+        </div>
+      )}
+      {submitStatus === "error" && (
+        <div className="rounded-md bg-red-50 border border-red-200 p-4 text-red-800 text-sm">
+          Something went wrong sending your message. Please try again or call us
+          directly at (613) 899-4918.
+        </div>
+      )}
       <Button
         type="submit"
         disabled={isSubmitting}

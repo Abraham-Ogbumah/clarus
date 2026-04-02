@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import ServiceCard from "../components/services/ServiceCard";
 import Section from "../components/common/Section";
 import PageHeader from "../components/common/PageHeader";
@@ -5,6 +6,14 @@ import Hero from "../components/home/Hero";
 import AboutCard from "../components/about/AboutCard";
 
 const HomePage = () => {
+  useEffect(() => {
+    document.title =
+      "Clarus Psychotherapy | Ottawa Counselling & Mental Health Support";
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc)
+      desc.content =
+        "Clarus Psychotherapy offers trauma-informed individual, couples, and family counselling in Ottawa, ON. Book your free consultation today.";
+  }, []);
   const services = [
     {
       title: "Individual Therapy",
@@ -72,8 +81,10 @@ const HomePage = () => {
       <Section className="bg-white">
         <AboutCard
           title="Your Journey Starts Here"
+          subtitle="Rooted in Empathy"
           description="At Clarus Psychotherapy, we're here to walk alongside you through life's ups, downs, and everything in between. Whether you're navigating anxiety, addiction, depression, relationship struggles, prenatal distress, or major life transitions, you don't have to do it alone. We support individuals, couples, and families from all walks of life—including those facing the unique challenges of immigration-related stress and trauma. With over seven years of experience, we use proven, evidence-based approaches like Cognitive Behavioural Therapy (CBT), Solution-Focused Therapy, Narrative Therapy, and the Gottman Method to help you tap into your strengths and move forward with clarity and confidence. Rooted in a trauma-informed and deeply empathetic approach, Clarus Psychotherapy offers a safe, welcoming, and non-judgmental space for healing, growth, and meaningful change. Let's take the next step—together."
-          imageSrc="./Golden_Morning.png"
+          ctaText="Learn more about our approach →"
+          imageSrc="/Golden_Morning.png"
         />
       </Section>
 
