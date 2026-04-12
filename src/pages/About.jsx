@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Brain, Target, BookOpen, Heart, Leaf } from "lucide-react";
 import QualificationCard from "../components/about/QualificationCard";
 import Section from "../components/common/Section";
 import PageHeader from "../components/common/PageHeader";
@@ -34,26 +35,31 @@ const AboutPage = () => {
       title: "Cognitive Behavioural Therapy (CBT)",
       description:
         "Evidence-based approach that helps identify and change negative thought patterns and behaviors.",
+      icon: Brain,
     },
     {
       title: "Solution-Focused Therapy",
       description:
         "Goal-oriented approach that focuses on solutions and strengths rather than problems.",
+      icon: Target,
     },
     {
       title: "Narrative Therapy",
       description:
         "Helps you re-author your life story by separating you from your problems.",
+      icon: BookOpen,
     },
     {
       title: "Gottman Method",
       description:
         "Research-based approach for couples therapy that builds stronger relationships.",
+      icon: Heart,
     },
     {
       title: "Mindful Practices",
       description:
         "Incorporating mindfulness techniques to enhance present-moment awareness and emotional regulation.",
+      icon: Leaf,
     },
   ];
 
@@ -152,26 +158,50 @@ const AboutPage = () => {
       </Section>
 
       {/* Therapeutic Approaches */}
-      <Section className="bg-white">
-        <PageHeader
-          title="Therapeutic Approaches"
-          subtitle="Evidence-based methods tailored to your unique needs"
-          className="text-clarus-dark-grey"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {approaches.map((approach, index) => (
-            <div
-              key={index}
-              className="bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-l-4 border-clarus-accent-green"
-            >
-              <h3 className="text-xl font-semibold text-clarus-olive-green mb-3">
-                {approach.title}
-              </h3>
-              <p className="text-clarus-dark-grey">{approach.description}</p>
-            </div>
-          ))}
+      <section className="bg-clarus-dark py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="mb-12">
+            <p className="text-clarus-accent-green text-xs font-semibold uppercase tracking-widest mb-3">
+              How I Work
+            </p>
+            <h2 className="text-4xl md:text-5xl font-serif text-white leading-tight">
+              Therapeutic Approaches
+            </h2>
+            <p className="mt-3 text-clarus-light-grey max-w-md">
+              Evidence-based methods tailored to your unique needs and goals.
+            </p>
+          </div>
+
+          {/* Cards — centre the last row when it has fewer than 3 items */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {approaches.map((approach, index) => {
+              const Icon = approach.icon;
+              return (
+                <div
+                  key={index}
+                  className="group bg-white/5 rounded-2xl p-7 border border-white/10 hover:border-clarus-sage-green/60 transition-all duration-300"
+                >
+                  {/* Icon */}
+                  <div className="w-12 h-12 bg-clarus-accent-green/20 rounded-xl flex items-center justify-center mb-5 group-hover:bg-clarus-accent-green/30 transition-colors duration-300">
+                    <Icon className="w-6 h-6 text-clarus-accent-green" />
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-lg font-semibold text-white mb-2 leading-snug">
+                    {approach.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-clarus-light-grey text-sm leading-relaxed">
+                    {approach.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </Section>
+      </section>
 
       {/* Education & Training */}
       <Section className="bg-clarus-light-grey">
