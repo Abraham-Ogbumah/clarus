@@ -33,7 +33,7 @@ const MobileNav = ({ isOpen, currentPath, setIsOpen }) => {
         ))}
         <Button
           variant="mobile"
-          size="large"
+          size="md"
           href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
         >
           Book Your Session

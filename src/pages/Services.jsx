@@ -116,9 +116,8 @@ const ServicesPage = () => {
                 journey and needs.
               </p>
               <Button
-                variant="primary"
-                size="large"
-                className="px-8 py-4 text-lg"
+                variant="secondary"
+                size="lg"
                 href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
               >
                 Schedule a Consultation
@@ -272,8 +271,7 @@ const ServicesPage = () => {
           <div className="text-center mt-14">
             <Button
               variant="primary"
-              size="large"
-              className="px-8 py-4 text-lg"
+              size="lg"
               href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
             >
               Begin Your Journey

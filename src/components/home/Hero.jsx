@@ -21,8 +21,7 @@ const Hero = () => {
             </p> */}
             <Button
               variant="primary"
-              size="large"
-              className="px-8 py-4 text-lg"
+              size="lg"
               href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
             >
               Book Your Session

@@ -63,9 +63,8 @@ const ContactPage = () => {
                 your journey to wellness.
               </p>
               <Button
-                variant="primary"
-                size="large"
-                className="px-8 py-4 text-lg"
+                variant="secondary"
+                size="lg"
                 href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
               >
                 Book Your Session
@@ -150,7 +149,7 @@ const ContactPage = () => {
             </p>
             <Button
               variant="primary"
-              className="bg-clarus-accent-green hover:bg-green-600 border-0 px-6 md:px-8 py-3 md:py-4 text-base md:text-lg"
+              size="lg"
               href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
             >
               Book Online

@@ -21,7 +21,7 @@ const DesktopNav = ({ currentPath }) => {
         href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
         target="_blank"
         variant="primary"
-        size="large"
+        size="sm"
       >
         Book Your Session
       </Button>

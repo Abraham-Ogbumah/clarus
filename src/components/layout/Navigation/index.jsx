@@ -70,9 +70,10 @@ const Navigation = () => {
 
             <div className="md:hidden flex items-center">
               <Button
+                variant="ghost"
+                size="sm"
                 onClick={toggleMobileMenu}
                 aria-label={isOpen ? "Close menu" : "Open menu"}
-                className="bg-clarus-sage-green text-white-600 hover:text-white-900 focus:outline-none"
               >
                 {isOpen ? (
                   <X className="w-6 h-6" />

@@ -108,8 +108,10 @@ const ContactForm = ({ onSubmit }) => {
       )}
       <Button
         type="submit"
+        variant="primary"
+        size="md"
         disabled={isSubmitting}
-        className={`w-full bg-clarus-accent-green hover:bg-clarus-accent-green text-white font-semibold py-3 px-6 rounded-md transition-all duration-200 border-0 shadow-md hover:shadow-lg ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
+        className="w-full"
       >
         {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
