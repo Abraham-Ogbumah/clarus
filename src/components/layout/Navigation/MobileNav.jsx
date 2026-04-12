@@ -18,26 +18,39 @@ const MobileNav = ({ isOpen, currentPath, setIsOpen }) => {
   };
 
   return (
-    <div className="md:hidden bg-white shadow-lg">
-      <div className="px-2 pt-2 pb-3 space-y-1">
-        {links.map(({ href, label }) => (
-          <a
-            key={href}
-            href={href}
-            onClick={(e) => handleClick(e, href)}
-            className={`block px-3 py-2 text-clarus-light-grey hover:text-clarus-sage-green font-semibold transition-colors
-                ${currentPath === href ? "text-clarus-sage-green font-bold bg-clarus-lightest rounded-md" : ""}`}
+    <div className="md:hidden bg-white border-t border-gray-100 shadow-xl">
+      <div className="max-w-7xl mx-auto px-4 py-6 space-y-1">
+        {links.map(({ href, label }) => {
+          const isActive = currentPath === href;
+          return (
+            <a
+              key={href}
+              href={href}
+              onClick={(e) => handleClick(e, href)}
+              className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
+                isActive
+                  ? "bg-clarus-dark text-white"
+                  : "text-clarus-dark-grey hover:bg-clarus-lightest hover:text-clarus-dark"
+              }`}
+            >
+              {label}
+              {isActive && (
+                <span className="w-1.5 h-1.5 rounded-full bg-clarus-accent-green" />
+              )}
+            </a>
+          );
+        })}
+
+        <div className="pt-4 border-t border-gray-100 mt-2">
+          <Button
+            variant="primary"
+            size="md"
+            className="w-full"
+            href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
           >
-            {label}
-          </a>
-        ))}
-        <Button
-          variant="mobile"
-          size="md"
-          href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
-        >
-          Book Your Session
-        </Button>
+            Book Your Session
+          </Button>
+        </div>
       </div>
     </div>
   );

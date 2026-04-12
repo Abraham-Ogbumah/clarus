@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import ContactForm from "../components/contact/ContactForm";
-import ContactInfo from "../components/contact/ContactInfo";
 import Section from "../components/common/Section";
 import PageHeader from "../components/common/PageHeader";
 import Button from "../components/common/Button";
-import { MapPin, Phone, Mail, Clock, Calendar } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const ContactPage = () => {
   useEffect(() => {
@@ -75,88 +74,100 @@ const ContactPage = () => {
       </section>
 
       {/* Contact Form & Info */}
-      <Section className="bg-gray-50">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Contact Form */}
-          <div className="flex flex-col h-full">
-            <h2 className="text-2xl md:text-3xl font-serif text-clarus-olive-green mb-4 md:mb-6">
-              Send us a Message
-            </h2>
-            <p className="text-clarus-dark-grey mb-6 md:mb-8">
-              Fill out the form below and we&apos;ll get back to you within 24
-              hours. All communications are confidential.
-            </p>
-            <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg border border-gray-200 flex-1">
-              <ContactForm onSubmit={handleSubmit} />
-            </div>
-          </div>
+      <section className="bg-clarus-lightest py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+            {/* Left — Contact Info panel */}
+            <div className="lg:col-span-2 bg-clarus-dark rounded-2xl p-8 flex flex-col gap-6">
+              <div>
+                <p className="text-clarus-accent-green text-xs font-semibold uppercase tracking-widest mb-3">
+                  Reach Out
+                </p>
+                <h2 className="text-3xl font-serif text-white leading-snug">
+                  Contact Information
+                </h2>
+                <p className="mt-2 text-clarus-light-grey text-sm">
+                  We&apos;re here to help. Reach out by phone, email, or visit
+                  us in person.
+                </p>
+              </div>
 
-          {/* Contact Information */}
-          <div className="flex flex-col h-full">
-            <h2 className="text-2xl md:text-3xl font-serif text-clarus-olive-green mb-4 md:mb-6">
-              Contact Information
-            </h2>
-            <div className="space-y-4 md:space-y-6 flex-1 flex flex-col">
-              {contactInfo.map((info, index) => (
-                <div
-                  key={index}
-                  className="bg-white p-4 md:p-6 rounded-lg shadow-md border-l-4 border-clarus-accent-green flex items-center min-h-[80px]"
-                >
-                  <ContactInfo {...info} />
-                </div>
-              ))}
+              {/* Info cards */}
+              <div className="space-y-4">
+                {contactInfo.map((info, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 bg-white/5 rounded-xl p-4 border border-white/10"
+                  >
+                    <div className="w-10 h-10 bg-clarus-accent-green/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      {info.icon}
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-clarus-accent-green uppercase tracking-wide mb-0.5">
+                        {info.title}
+                      </p>
+                      <p className="text-white text-sm whitespace-pre-line leading-relaxed">
+                        {info.content}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-              {/* Office Hours */}
-              <div className="bg-white p-4 md:p-6 rounded-lg shadow-md border-l-4 border-clarus-olive-green mt-auto">
-                <div className="flex items-center mb-4">
-                  <Clock className="w-6 h-6 text-clarus-accent-green mr-3 flex-shrink-0" />
-                  <h3 className="text-lg md:text-xl font-semibold text-clarus-olive-green">
+              {/* Office hours */}
+              <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+                <div className="flex items-center gap-3 mb-4">
+                  <Clock className="w-5 h-5 text-clarus-accent-green flex-shrink-0" />
+                  <p className="text-sm font-semibold text-white uppercase tracking-wide">
                     Office Hours
-                  </h3>
+                  </p>
                 </div>
-                <div className="space-y-2 md:space-y-3">
+                <div className="space-y-2">
                   {officeHours.map((schedule, index) => (
-                    <div
-                      key={index}
-                      className="flex justify-between text-sm md:text-base"
-                    >
-                      <span className="text-clarus-dark-grey font-medium">
+                    <div key={index} className="flex justify-between text-sm">
+                      <span className="text-clarus-light-grey">
                         {schedule.day}
                       </span>
-                      <span className="text-clarus-dark-grey">
+                      <span
+                        className={`font-medium ${schedule.hours === "Closed" ? "text-clarus-sage-green" : "text-white"}`}
+                      >
                         {schedule.hours}
                       </span>
                     </div>
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
 
-        {/* Quick Booking - Full width below the two columns */}
-        <div className="mt-8 md:mt-12 bg-clarus-olive-green text-white p-6 md:p-8 rounded-lg shadow-md">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="flex items-center justify-center mb-4">
-              <Calendar className="w-6 md:w-8 h-6 md:h-8 text-clarus-lightest mr-3" />
-              <h3 className="text-xl md:text-2xl font-semibold">
-                Ready to Book?
-              </h3>
+              {/* Book CTA inside panel */}
+              <Button
+                variant="primary"
+                size="md"
+                href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
+                className="w-full mt-auto"
+              >
+                Book Your Session
+              </Button>
             </div>
-            <p className="mb-4 md:mb-6 opacity-90 text-base md:text-lg">
-              Schedule your initial consultation online or give us a call. We
-              offer both in-person and virtual sessions.
-            </p>
-            <Button
-              variant="primary"
-              size="lg"
-              href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
-            >
-              Book Online
-            </Button>
+
+            {/* Right — Form panel */}
+            <div className="lg:col-span-3 bg-white rounded-2xl p-8 shadow-sm border border-clarus-lightest">
+              <div className="mb-7">
+                <p className="text-clarus-accent-green text-xs font-semibold uppercase tracking-widest mb-3">
+                  Get in Touch
+                </p>
+                <h2 className="text-3xl font-serif text-clarus-dark leading-snug">
+                  Send us a Message
+                </h2>
+                <p className="mt-2 text-clarus-dark-grey text-sm">
+                  Fill out the form and we&apos;ll get back to you within 24
+                  hours. All communications are confidential.
+                </p>
+              </div>
+              <ContactForm onSubmit={handleSubmit} />
+            </div>
           </div>
         </div>
-      </Section>
+      </section>
 
       {/* Location & Directions */}
       <Section className="bg-white">
