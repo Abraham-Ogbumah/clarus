@@ -9,10 +9,11 @@ import {
   MessageCircle,
   ClipboardList,
   TrendingUp,
+  Banknote,
+  CheckCircle,
 } from "lucide-react";
 import ServiceCard from "../components/services/ServiceCard";
 import Section from "../components/common/Section";
-import PageHeader from "../components/common/PageHeader";
 import Button from "../components/common/Button";
 
 const ServicesPage = () => {
@@ -78,6 +79,24 @@ const ServicesPage = () => {
       format: "In-person or Online",
       text: "Navigate the emotional challenges of immigration, cultural adjustment, identity formation, and family dynamics. I understand the unique stressors faced by newcomers and provide culturally responsive care.",
     },
+  ];
+
+  const rates = [
+    { name: "Individual Therapy", duration: "50 minutes", price: "$160" },
+    { name: "Couples Therapy", duration: "90 minutes", price: "$190" },
+    { name: "Family Therapy", duration: "75 minutes", price: "$220" },
+    {
+      name: "Immigration Counselling / Case Management",
+      duration: "60 minutes",
+      price: "$205",
+    },
+  ];
+
+  const insurancePoints = [
+    "Direct billing available for many extended health plans",
+    "Sliding scale options available for financial hardship",
+    "Payment plans available upon request",
+    "Official receipts provided for all sessions",
   ];
 
   const specializations = [
@@ -280,74 +299,118 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Insurance & Payment */}
-      <Section className="bg-gray-50">
-        <PageHeader
-          title="Invest in Your Well-being"
-          subtitle="Flexible payment options and insurance information"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <h3 className="text-xl font-semibold text-clarus-olive-green mb-4">
-              Session Rates
-            </h3>
-            <ul className="space-y-3 text-clarus-dark-grey">
-              <li className="flex justify-between items-center py-2 border-b border-gray-100">
-                <span>Individual Therapy (50 min)</span>
-                <span className="font-semibold">$160</span>
-              </li>
-              <li className="flex justify-between items-center py-2 border-b border-gray-100">
-                <span>Couples Therapy (90 min)</span>
-                <span className="font-semibold">$190</span>
-              </li>
-              <li className="flex justify-between items-center py-2 border-b border-gray-100">
-                <span>Family Therapy (75 min)</span>
-                <span className="font-semibold">$220</span>
-              </li>
-              <li className="flex justify-between items-center py-2">
-                <span>Initial Consultation (15 min)</span>
-                <span className="font-semibold">$0</span>
-              </li>
-              <li className="flex justify-between items-center py-2">
-                <span>Immigration Counselling / Case Management (60 min)</span>
-                <span className="font-semibold">$205</span>
-              </li>
-            </ul>
+      {/* Invest in Your Well-being */}
+      <section className="bg-clarus-lightest py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="mb-12">
+            <p className="text-clarus-accent-green text-xs font-semibold uppercase tracking-widest mb-3">
+              Pricing &amp; Coverage
+            </p>
+            <h2 className="text-4xl md:text-5xl font-serif text-clarus-dark leading-tight">
+              Invest in Your Well-being
+            </h2>
+            <p className="mt-3 text-clarus-dark-grey max-w-md">
+              Flexible payment options and insurance support to make care
+              accessible.
+            </p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-            <h3 className="text-xl font-semibold text-clarus-olive-green mb-4">
-              Insurance &amp; Payment
-            </h3>
-            <p className="text-clarus-dark-grey mb-4">
-              We accept various extended health insurance plans. Many clients
-              are able to claim therapy sessions through their workplace
-              benefits or private insurance.
-            </p>
-            <ul className="space-y-2 text-clarus-dark-grey mb-6">
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Direct billing available for many plans
-              </li>
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Sliding scale options for financial hardship
-              </li>
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Payment plans available upon request
-              </li>
-              <li className="flex items-start">
-                <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                Receipts provided for all sessions
-              </li>
-            </ul>
-            {/* <Button variant="primary" className="bg-clarus-accent-green hover:bg-green-600 border-0">
-              Verify Your Coverage
-            </Button> */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Session Rates */}
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-clarus-lightest flex flex-col">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-11 h-11 bg-clarus-dark-olive rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Banknote className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-clarus-dark">
+                  Session Rates
+                </h3>
+              </div>
+
+              {/* Free consultation highlight */}
+              <div className="bg-clarus-accent-green/10 border border-clarus-accent-green/30 rounded-xl px-5 py-4 mb-5 flex items-center justify-between">
+                <div>
+                  <p className="font-semibold text-clarus-dark text-sm">
+                    Initial Consultation
+                  </p>
+                  <p className="text-xs text-clarus-medium-green mt-0.5">
+                    15 minutes &bull; No commitment required
+                  </p>
+                </div>
+                <span className="text-clarus-accent-green font-bold text-xl tracking-tight">
+                  FREE
+                </span>
+              </div>
+
+              {/* Rate rows */}
+              <ul className="divide-y divide-clarus-lightest flex-1">
+                {rates.map((rate, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center justify-between py-3.5"
+                  >
+                    <div>
+                      <p className="text-sm font-medium text-clarus-dark">
+                        {rate.name}
+                      </p>
+                      <p className="text-xs text-clarus-medium-green mt-0.5">
+                        {rate.duration}
+                      </p>
+                    </div>
+                    <span className="font-bold text-clarus-dark">
+                      {rate.price}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Insurance & Payment */}
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-clarus-lightest flex flex-col">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-11 h-11 bg-clarus-dark-olive rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-clarus-dark">
+                  Insurance &amp; Payment
+                </h3>
+              </div>
+
+              <p className="text-clarus-dark-grey text-sm leading-relaxed mb-6">
+                We accept various extended health insurance plans. Many clients
+                claim therapy through their workplace benefits or private
+                insurance — we&apos;re happy to help you navigate coverage.
+              </p>
+
+              <ul className="space-y-4 flex-1">
+                {insurancePoints.map((point, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-clarus-accent-green flex-shrink-0 mt-0.5" />
+                    <span className="text-clarus-dark-grey text-sm">
+                      {point}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 pt-6 border-t border-clarus-lightest">
+                <p className="text-sm text-clarus-medium-green mb-4">
+                  Not sure if your plan covers therapy? Start with a free
+                  consultation.
+                </p>
+                <Button
+                  variant="outline"
+                  size="md"
+                  href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
+                >
+                  Book a Free Consultation
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
-      </Section>
+      </section>
     </main>
   );
 };
