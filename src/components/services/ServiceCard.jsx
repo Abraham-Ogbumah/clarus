@@ -1,32 +1,43 @@
 import PropTypes from "prop-types";
 
-const ServiceCard = ({ title, description, icon, duration, format, text }) => {
+const ServiceCard = ({
+  title,
+  description,
+  text,
+  duration,
+  format,
+  icon: Icon,
+}) => {
   return (
-    <div className="shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full">
-      <div className="bg-white p-6 rounded-t-lg mb-2 flex-none h-64 flex flex-col">
-        <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mb-4 flex-shrink-0">
-          {icon}
-        </div>
-        <h3 className="text-xl text-clarus-olive-green font-semibold mb-2 flex-shrink-0">
-          {title}
-        </h3>
-        <p className="text-clarus-dark-grey mb-4 flex-grow">{description}</p>
-        <div className="text-sm text-clarus-dark-grey flex-shrink-0">
-          {duration && (
-            <p>
-              <strong>Duration:</strong> {duration}
-            </p>
-          )}
-          {format && (
-            <p>
-              <strong>Format:</strong> {format}
-            </p>
-          )}
-        </div>
+    <div className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 border border-clarus-lightest hover:border-clarus-accent-green hover:-translate-y-1 flex flex-col">
+      {/* Icon */}
+      <div className="w-12 h-12 bg-clarus-dark-olive rounded-xl flex items-center justify-center mb-5 group-hover:bg-clarus-accent-green transition-colors duration-300 flex-shrink-0">
+        <Icon className="w-5 h-5 text-white" />
       </div>
 
-      <div className="bg-clarus-olive-green p-6 rounded-b-lg text-white flex-1 h-48 flex items-start">
-        <p>{text}</p>
+      {/* Title */}
+      <h3 className="text-lg font-semibold text-clarus-dark mb-2 leading-snug">
+        {title}
+      </h3>
+
+      {/* Short description */}
+      <p className="text-clarus-dark-grey text-sm mb-3">{description}</p>
+
+      {/* Full text */}
+      <p className="text-clarus-dark-grey text-sm leading-relaxed flex-1">
+        {text}
+      </p>
+
+      {/* Badges */}
+      <div className="flex flex-wrap gap-2 mt-5 pt-4 border-t border-clarus-lightest">
+        <span className="text-xs font-medium text-clarus-medium-green bg-clarus-lightest px-3 py-1 rounded-full">
+          {duration}
+        </span>
+        {format && (
+          <span className="text-xs font-medium text-clarus-medium-green bg-clarus-lightest px-3 py-1 rounded-full">
+            {format}
+          </span>
+        )}
       </div>
     </div>
   );
@@ -35,10 +46,10 @@ const ServiceCard = ({ title, description, icon, duration, format, text }) => {
 ServiceCard.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  icon: PropTypes.oneOfType([PropTypes.element, PropTypes.string]).isRequired,
-  duration: PropTypes.string,
-  format: PropTypes.string,
   text: PropTypes.string.isRequired,
+  duration: PropTypes.string.isRequired,
+  format: PropTypes.string,
+  icon: PropTypes.elementType.isRequired,
 };
 
 export default ServiceCard;

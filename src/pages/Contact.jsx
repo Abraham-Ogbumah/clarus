@@ -46,13 +46,12 @@ const ContactPage = () => {
     <main>
       {/* Hero Section */}
       <section className="relative bg-clarus-dark-olive overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('/home_image.png')" }}
+          aria-hidden="true"
+        />
         <div className="py-32 relative max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Background Image */}
-          <div
-            className="absolute inset-0 bg-contain bg-right bg-no-repeat opacity-40"
-            style={{ backgroundImage: "url('/contact_hero.jpg')" }}
-          />
-
           {/* Content Container - Centered */}
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">

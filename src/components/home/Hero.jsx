@@ -15,10 +15,10 @@ const Hero = () => {
             <h1 className="text-5xl md:text-6xl font-serif text-white mb-4 leading-tight">
               Welcome to Clarus Psychotherapy
             </h1>
-            <p className="text-lg md:text-xl text-clarus-lightest max-w-2xl mx-auto mb-10 opacity-90">
+            {/* <p className="text-lg md:text-xl text-clarus-lightest max-w-2xl mx-auto mb-10 opacity-90">
               A safe, empathetic space for healing and growth — rooted in
               evidence-based care and cultural sensitivity.
-            </p>
+            </p> */}
             <Button
               variant="primary"
               size="large"
