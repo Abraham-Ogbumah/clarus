@@ -1,8 +1,13 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import Input from "../common/Input";
 import TextArea from "../common/TextArea";
 import Button from "../common/Button";
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const ContactForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -20,25 +25,22 @@ const ContactForm = ({ onSubmit }) => {
     setIsSubmitting(true);
 
     try {
-      // Here you would typically send the data to your backend/email service
-      // For now, we'll simulate the submission
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || "Not provided",
+          message: formData.message,
+        },
+        EMAILJS_PUBLIC_KEY,
+      );
 
-      // Example: await sendEmail(formData);
-
-      // Reset form after successful submission
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-
+      setFormData({ name: "", email: "", phone: "", message: "" });
       setSubmitStatus("success");
 
-      // Call the onSubmit prop if provided
-      if (onSubmit) {
-        onSubmit(formData);
-      }
+      if (onSubmit) onSubmit(formData);
     } catch {
       setSubmitStatus("error");
     } finally {
