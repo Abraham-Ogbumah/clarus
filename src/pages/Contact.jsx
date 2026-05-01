@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import ContactForm from "../components/contact/ContactForm";
 import Section from "../components/common/Section";
-import PageHeader from "../components/common/PageHeader";
 import Button from "../components/common/Button";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Globe, Phone, Mail, Clock } from "lucide-react";
 
 const ContactPage = () => {
   useEffect(() => {
@@ -11,7 +10,7 @@ const ContactPage = () => {
     const desc = document.querySelector('meta[name="description"]');
     if (desc)
       desc.content =
-        "Contact Clarus Psychotherapy in Ottawa. Call (613) 899-4918, email us, or book online. Located at 404 McArthur Ave, Ottawa, ON.";
+        "Contact Clarus Psychotherapy. Virtual counselling sessions across Ontario. Call (613) 899-4918, email us, or book online today.";
   }, []);
 
   const handleSubmit = (formData) => {
@@ -20,9 +19,9 @@ const ContactPage = () => {
 
   const contactInfo = [
     {
-      icon: <MapPin className="w-6 h-6 text-clarus-accent-green" />,
-      title: "Office Location",
-      content: "404 McArthur Ave\nOttawa, ON K1K 1G8",
+      icon: <Globe className="w-6 h-6 text-clarus-accent-green" />,
+      title: "Service Area",
+      content: "Virtual Sessions\nAvailable across Canada",
     },
     {
       icon: <Phone className="w-6 h-6 text-clarus-accent-green" />,
@@ -87,8 +86,8 @@ const ContactPage = () => {
                   Contact Information
                 </h2>
                 <p className="mt-2 text-clarus-light-grey text-sm">
-                  We&apos;re here to help. Reach out by phone, email, or visit
-                  us in person.
+                  We&apos;re here to help. Reach out by phone or email — all
+                  sessions are virtual and confidential.
                 </p>
               </div>
 
@@ -168,80 +167,6 @@ const ContactPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Location & Directions */}
-      <Section className="bg-white">
-        <PageHeader
-          title="Visit Our Office"
-          subtitle="Convenient location in Ottawa with easy access and parking"
-          className="text-clarus-dark-grey"
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          <div className="h-80 md:h-96 flex flex-col">
-            <h3 className="text-xl md:text-2xl font-semibold text-clarus-olive-green mb-4">
-              Getting Here
-            </h3>
-            <div className="space-y-3 md:space-y-4 text-clarus-dark-grey flex-grow">
-              <p className="text-sm md:text-base">
-                <strong className="text-clarus-olive-green">By Car:</strong>{" "}
-                Ample free parking available on-site. We&apos;re easily
-                accessible from Highway 417 and Vanier Parkway.
-              </p>
-              <p className="text-sm md:text-base">
-                <strong className="text-clarus-olive-green">
-                  By Public Transit:
-                </strong>{" "}
-                Multiple OC Transpo routes serve the area. The nearest stop is
-                just a 3-minute walk from our office.
-              </p>
-              <p className="text-sm md:text-base">
-                <strong className="text-clarus-olive-green">
-                  Accessibility:
-                </strong>{" "}
-                Our office is wheelchair accessible with barrier-free entrances
-                and washroom facilities.
-              </p>
-            </div>
-
-            <div className="mt-4 md:mt-6 p-4 md:p-6 bg-gray-50 rounded-lg shadow-sm border-l-4 border-clarus-accent-green">
-              <h4 className="font-semibold text-clarus-olive-green mb-3 md:mb-4 text-base md:text-lg">
-                Office Features
-              </h4>
-              <ul className="space-y-1 md:space-y-2 text-clarus-dark-grey text-sm md:text-base">
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Private, soundproof therapy rooms
-                </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Comfortable waiting area
-                </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Free Wi-Fi
-                </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-clarus-accent-green rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Confidential and secure environment
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="h-80 md:h-96 rounded-lg overflow-hidden shadow-md border">
-            <iframe
-              title="Office Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.6!2d-75.654!3d45.4397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce055c4e5a0001%3A0x404mcarthur!2s404+McArthur+Ave%2C+Ottawa%2C+ON+K1K+1G8%2C+Canada!5e0!3m2!1sen!2sca!4v1"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-        </div>
-      </Section>
 
       {/* Emergency Resources */}
       <Section className="bg-red-50 border-t-4 border-red-400">

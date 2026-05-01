@@ -31,7 +31,7 @@ const ServicesPage = () => {
         "One-on-one therapy sessions tailored to your unique needs and goals.",
       icon: User,
       duration: "50 minutes",
-      format: "In-person or Online",
+      format: "Virtual sessions",
       text: "Individual psychotherapy can help release old wounds, address fears, struggles and combat problems before they become bigger issues. We'll work together to develop healthy coping strategies and build resilience.",
     },
     {
@@ -40,7 +40,7 @@ const ServicesPage = () => {
         "Build stronger relationships through improved communication and understanding.",
       icon: Users,
       duration: "90 minutes",
-      format: "In-person or Online",
+      format: "Virtual sessions",
       text: "Relationship counselling and therapy for couples are about addressing problems and building a foundation for a stronger, more fulfilling partnership. It's about learning, growing, and finding ways to connect more deeply with each other.",
     },
     {
@@ -49,7 +49,7 @@ const ServicesPage = () => {
         "Specialized care for your emotional well-being during pregnancy and beyond.",
       icon: Heart,
       duration: "60 minutes",
-      format: "In-person or Online",
+      format: "Virtual sessions",
       text: "As your perinatal therapist, I will collaborate with you through pregnancy, birth, and postpartum wellness plans. This includes support for anxiety, depression, birth trauma, and adjustment challenges.",
     },
     {
@@ -58,7 +58,7 @@ const ServicesPage = () => {
         "Helping families improve communication and resolve conflicts together.",
       icon: HomeIcon,
       duration: "75 minutes",
-      format: "In-person or Online",
+      format: "Virtual sessions",
       text: "Family therapy provides a safe space for all family members to express their feelings, improve communication patterns, and work together toward healthier relationships and dynamics.",
     },
     {
@@ -67,7 +67,7 @@ const ServicesPage = () => {
         "Specialized support for processing traumatic experiences and building resilience.",
       icon: Shield,
       duration: "60 minutes",
-      format: "In-person or Online",
+      format: "Virtual sessions",
       text: "Using trauma-informed approaches, we'll work at your pace to process difficult experiences, develop healthy coping mechanisms, and reclaim your sense of safety and empowerment.",
     },
     {
@@ -76,7 +76,7 @@ const ServicesPage = () => {
         "Culturally sensitive therapy for immigration-related stress and adjustment.",
       icon: Globe,
       duration: "50 minutes",
-      format: "In-person or Online",
+      format: "Virtual sessions",
       text: "Navigate the emotional challenges of immigration, cultural adjustment, identity formation, and family dynamics. I understand the unique stressors faced by newcomers and provide culturally responsive care.",
     },
   ];
