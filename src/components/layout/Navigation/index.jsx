@@ -45,7 +45,8 @@ const Navigation = () => {
                 e.preventDefault();
                 window.navigateTo("/");
               }}
-              className="flex items-center flex-shrink-0"
+              className="flex items-center flex-shrink-0 outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-clarus-accent-green rounded"
+              style={{ WebkitTapHighlightColor: "transparent" }}
             >
               <img
                 src={isScrolled ? "/black_cl.png" : "/white_cl.png"}

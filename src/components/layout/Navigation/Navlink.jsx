@@ -16,9 +16,10 @@ const NavLink = ({ href, children, isCurrent, isScrolled }) => {
     <a
       href={href}
       onClick={handleClick}
-      className={`relative text-sm font-medium tracking-wide transition-colors duration-200 group ${
+      className={`relative text-sm font-medium tracking-wide transition-colors duration-200 group outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-clarus-accent-green focus-visible:ring-offset-2 rounded ${
         isCurrent ? activeText : baseText
       }`}
+      style={{ WebkitTapHighlightColor: "transparent" }}
     >
       {children}
       {/* Animated underline indicator */}

@@ -63,7 +63,7 @@ const ContactPage = () => {
               <Button
                 variant="secondary"
                 size="lg"
-                href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
+                href="https://claruscounselling.janeapp.com/#staff_member/1"
               >
                 Book Your Session
               </Button>
@@ -141,7 +141,7 @@ const ContactPage = () => {
               <Button
                 variant="primary"
                 size="md"
-                href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
+                href="https://claruscounselling.janeapp.com/#staff_member/1"
                 className="w-full mt-auto"
               >
                 Book Your Session

@@ -27,11 +27,12 @@ const MobileNav = ({ isOpen, currentPath, setIsOpen }) => {
               key={href}
               href={href}
               onClick={(e) => handleClick(e, href)}
-              className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
+              className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-clarus-accent-green ${
                 isActive
                   ? "bg-clarus-dark text-white"
                   : "text-clarus-dark-grey hover:bg-clarus-lightest hover:text-clarus-dark"
               }`}
+              style={{ WebkitTapHighlightColor: "transparent" }}
             >
               {label}
               {isActive && (
@@ -46,7 +47,7 @@ const MobileNav = ({ isOpen, currentPath, setIsOpen }) => {
             variant="primary"
             size="md"
             className="w-full"
-            href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
+            href="https://claruscounselling.janeapp.com/#staff_member/1"
           >
             Book Your Session
           </Button>

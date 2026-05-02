@@ -22,7 +22,7 @@ const Hero = () => {
             <Button
               variant="primary"
               size="lg"
-              href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
+              href="https://claruscounselling.janeapp.com/#staff_member/1"
             >
               Book Your Session
             </Button>

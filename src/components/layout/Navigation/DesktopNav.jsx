@@ -23,7 +23,7 @@ const DesktopNav = ({ currentPath, isScrolled }) => {
         </NavLink>
       ))}
       <Button
-        href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
+        href="https://claruscounselling.janeapp.com/#staff_member/1"
         target="_blank"
         variant="primary"
         size="sm"

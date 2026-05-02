@@ -137,7 +137,7 @@ const ServicesPage = () => {
               <Button
                 variant="secondary"
                 size="lg"
-                href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
+                href="https://claruscounselling.janeapp.com/#staff_member/1"
               >
                 Schedule a Consultation
               </Button>
@@ -291,7 +291,7 @@ const ServicesPage = () => {
             <Button
               variant="primary"
               size="lg"
-              href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
+              href="https://claruscounselling.janeapp.com/#staff_member/1"
             >
               Begin Your Journey
             </Button>
@@ -402,7 +402,7 @@ const ServicesPage = () => {
                 <Button
                   variant="outline"
                   size="md"
-                  href="https://www.gorendezvous.com/en/ClarusCounsellingandPsychotherapy"
+                  href="https://claruscounselling.janeapp.com/#staff_member/1"
                 >
                   Book a Free Consultation
                 </Button>
