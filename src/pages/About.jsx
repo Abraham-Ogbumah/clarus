@@ -8,6 +8,7 @@ import {
   GraduationCap,
   Award,
   Briefcase,
+  BadgeCheck,
   Quote,
   CheckCircle,
 } from "lucide-react";
@@ -23,6 +24,12 @@ const AboutPage = () => {
   }, []);
 
   const dorothyQualifications = [
+    {
+      year: "2026",
+      title: "Licensed Counsellor — New Brunswick",
+      institution: "License No. LCT26-017",
+      icon: BadgeCheck,
+    },
     {
       year: "2025",
       title: "Business Management",
@@ -45,8 +52,9 @@ const AboutPage = () => {
 
   const dorothyCredentials = [
     "Registered Psychotherapist (RP)",
+    "Licensed Counsellor — NB (LCT26-017)",
     "MA Counselling Psychology",
-    "Gottman Method Certified",
+    "Gottman Method Trained",
     "Trauma-Informed Care",
   ];
 
@@ -131,7 +139,7 @@ const AboutPage = () => {
                   Registered Psychotherapist (RP)
                 </p>
                 <p className="text-clarus-light-grey text-xs mt-1">
-                  Ontario, Canada
+                  Ontario, New Brunswick, Canada
                 </p>
               </div>
             </div>
@@ -232,52 +240,66 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
             <div className="lg:order-1">
               <p className="text-clarus-accent-green text-xs font-semibold uppercase tracking-widest mb-3">
-                Meet [Therapist Name]
+                Meet Wilfred Bengnwi (Willis)
               </p>
               <h2 className="text-4xl md:text-5xl font-serif text-clarus-dark mb-6 leading-tight">
-                [Therapist Tagline]
+                Clarity, Healing, a new way forward
               </h2>
 
               <div className="bg-white border-l-4 border-clarus-accent-green p-5 rounded-r-xl mb-6 shadow-sm">
                 <p className="text-clarus-dark italic leading-relaxed">
-                  [Opening highlight paragraph — a strong introductory statement
-                  about the therapist&apos;s experience and approach.]
+                  You don’t have to navigate these challenges alone. Together,
+                  we’ll explore the emotional and spiritual roots of your
+                  distress, uncover patterns that keep you stuck, and build
+                  pathways toward healing and reconnection. Whether through
+                  Emotionally Focused Therapy, Christian counseling, or
+                  architectural design for healing spaces, I offer a
+                  compassionate and structured approach to restoration.
                 </p>
               </div>
 
               <div className="space-y-4 text-clarus-dark-grey leading-relaxed">
                 <p>
-                  [Second paragraph — describe their therapeutic philosophy, the
-                  kind of space they aim to create, and what clients can expect
-                  from working together.]
+                  Healing happens in safe, attuned relationships. I’m passionate
+                  about supporting your whole self—body, mind, and spirit—while
+                  walking alongside you to restore emotional safety, deepen
+                  connection, and renew your sense of identity. My goal is to
+                  help you experience peace, clarity, and lasting hope—whether
+                  you’re seeking healing within your relationship or doing the
+                  work as an individual
                 </p>
                 <p>
-                  [Third paragraph — areas of specialization, populations they
-                  particularly enjoy supporting, and any unique perspectives
-                  they bring.]
+                  I specialize in working with couples seeking reconnection and
+                  trust, individuals healing from trauma or grief, and families
+                  navigating emotional safety and communication. My approach is
+                  integrative, blending EFT, Gottman Method, Attachment-Based
+                  and Trauma-Informed therapy, Cognitive Behavioral Therapy
+                  (CBT), Dialectical Behavioral Therapy (DBT), Humanistic and
+                  Existential approaches, Strengths-Based and Solution-Focused
+                  strategies, and Christian counseling when desired.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-2 mt-7">
                 <span className="inline-flex items-center gap-1.5 bg-white text-clarus-dark px-3 py-1.5 rounded-full text-xs font-semibold border border-clarus-lightest">
                   <CheckCircle className="w-3.5 h-3.5 text-clarus-accent-green" />
-                  [Credential 1]
+                  Registered Psychotherapist (RP)
                 </span>
                 <span className="inline-flex items-center gap-1.5 bg-white text-clarus-dark px-3 py-1.5 rounded-full text-xs font-semibold border border-clarus-lightest">
                   <CheckCircle className="w-3.5 h-3.5 text-clarus-accent-green" />
-                  [Credential 2]
+                  M.A
                 </span>
                 <span className="inline-flex items-center gap-1.5 bg-white text-clarus-dark px-3 py-1.5 rounded-full text-xs font-semibold border border-clarus-lightest">
                   <CheckCircle className="w-3.5 h-3.5 text-clarus-accent-green" />
-                  [Credential 3]
+                  PdD
                 </span>
               </div>
             </div>
 
             <div className="relative lg:order-2">
               <img
-                src="/Golden_Morning.png"
-                alt="[Therapist Name]"
+                src="/Willis_image.jpeg"
+                alt="Willis - Therapist at Clarus Psychotherapy"
                 className="w-full h-auto rounded-2xl shadow-lg"
                 loading="lazy"
               />
@@ -286,7 +308,7 @@ const AboutPage = () => {
                   Verified
                 </p>
                 <p className="font-semibold text-sm leading-snug">
-                  [Title / Credential]
+                  Registered Psychotherapist (RP)
                 </p>
                 <p className="text-clarus-light-grey text-xs mt-1">
                   Ontario, Canada
@@ -302,7 +324,7 @@ const AboutPage = () => {
               aria-hidden="true"
             />
             <p className="text-clarus-accent-green text-xs font-semibold uppercase tracking-widest mb-3">
-              [Therapist Name]&apos;s Journey to This Work
+              Willi&apos;s Journey to This Work
             </p>
             <p className="text-lg md:text-xl text-clarus-dark-grey leading-relaxed font-serif italic mb-5">
               [Personal story paragraph — what drew this therapist to the field,

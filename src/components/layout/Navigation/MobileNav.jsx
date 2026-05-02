@@ -27,10 +27,10 @@ const MobileNav = ({ isOpen, currentPath, setIsOpen }) => {
               key={href}
               href={href}
               onClick={(e) => handleClick(e, href)}
-              className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-clarus-accent-green ${
+              className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm font-medium no-underline select-none transition-all duration-200 outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-clarus-accent-green ${
                 isActive
-                  ? "bg-clarus-dark text-white"
-                  : "text-clarus-dark-grey hover:bg-clarus-lightest hover:text-clarus-dark"
+                  ? "bg-clarus-dark text-white visited:text-white active:text-white"
+                  : "text-clarus-dark-grey visited:text-clarus-dark-grey active:text-clarus-dark-grey hover:bg-clarus-lightest hover:text-clarus-dark"
               }`}
               style={{ WebkitTapHighlightColor: "transparent" }}
             >

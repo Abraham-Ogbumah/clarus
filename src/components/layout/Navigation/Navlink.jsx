@@ -7,16 +7,18 @@ const NavLink = ({ href, children, isCurrent, isScrolled }) => {
   };
 
   const baseText = isScrolled
-    ? "text-clarus-dark-grey hover:text-clarus-dark"
-    : "text-white hover:text-clarus-lightest";
+    ? "text-clarus-dark-grey visited:text-clarus-dark-grey active:text-clarus-dark-grey hover:text-clarus-dark"
+    : "text-white visited:text-white active:text-white hover:text-clarus-lightest";
 
-  const activeText = isScrolled ? "text-clarus-dark" : "text-white";
+  const activeText = isScrolled
+    ? "text-clarus-dark visited:text-clarus-dark active:text-clarus-dark"
+    : "text-white visited:text-white active:text-white";
 
   return (
     <a
       href={href}
       onClick={handleClick}
-      className={`relative text-sm font-medium tracking-wide transition-colors duration-200 group outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-clarus-accent-green focus-visible:ring-offset-2 rounded ${
+      className={`relative text-sm font-medium tracking-wide no-underline select-none transition-colors duration-200 group outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-clarus-accent-green focus-visible:ring-offset-2 rounded ${
         isCurrent ? activeText : baseText
       }`}
       style={{ WebkitTapHighlightColor: "transparent" }}
